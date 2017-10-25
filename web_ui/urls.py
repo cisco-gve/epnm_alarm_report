@@ -16,16 +16,24 @@ URL mapping of the application
 """
 
 from django.conf.urls import url
+from django.contrib.auth import views as auth_views
 
 from . import views
 
 urlpatterns = [
 
     url(r'^$', views.index),
+    url(r'^auth/$', views.auth_view),
+    url(r'^login/$', views.login_view, name='login'),
+    url(r'^location/(?P<loc>.*)/$', views.index, name='location'),
+    url(r'^device/(?P<dev>.*)/$', views.index, name='device'),
 
     # Angular mappings
     url(r'^home/?$', views.index),
     url(r'^ng/home/?$', views.home),
+    url(r'^ng/main/?$', views.main),
+    url(r'^ng/location/(?P<loc>.*)/$', views.location_landing),
+    url(r'^ng/device/(?P<dev>.*)/$', views.device_landing),
 
     # APIs Mappings
     url(r'^api/example/?$', views.api_example)

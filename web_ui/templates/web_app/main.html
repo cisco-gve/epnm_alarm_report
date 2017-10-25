@@ -14,11 +14,10 @@
                 </div>
                 <div class="col-md-8 col-xl-10">
                     <div class="flex-fluid">
-                        <h1>MAIN HTML TEMPLATE </h1>
-                        <p class="text-large">Description
-                        </p>
-                        <p>
-                            Another paragraph
+                        <h2>Evolved Programmable Network Manager</h2>
+                        <h2>Alarm Reporting Application</h2>
+                        <br>
+                        <p class="text-large">Select a location listed below to view devices that have reported alarms
                         </p>
                     </div>
                 </div>
@@ -31,20 +30,17 @@
         <div class="panel panel--loose panel--bordered">
             <div class="row">
                 <div class="col-md-8 text-large">
-                    <h1 class="text-huge text-blue base-margin-bottom">Locations</h1>
+                    <h1 class="text-huge text-blue base-margin-bottom"><b>
+                    Locations</b></h1>
                 </div>
             </div>
-            <div style="padding-top: 10px">
-                <ul class="ul" data-columns="3">
-                    {%for item in list%}
-                        <p><a href="{% url 'location' loc=item %}">{{ item }}</a></p>
-                        
-                    {% endfor %}
-                </ul>
-            </div>
-            
-
-
+            <table style="width: 100%">
+                {% for item in list %}
+                    {% cycle '<tr>' '' ''%}
+                        <td class="text-large" style="padding: 15px 5%"><a href="{% url 'location' loc=item %}">{{ item }}</a></td>
+                    {% cycle '' '' '</tr>' %}
+                {% endfor %}
+            </table>
         </div>
     </div>
 </div>

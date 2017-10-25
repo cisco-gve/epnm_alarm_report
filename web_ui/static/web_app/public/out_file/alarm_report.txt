@@ -1,0 +1,25 @@
++++++ 172.23.193.192Alarm Summary +++++
+	447005769: Severity is MINOR
+
+	Last Reported: 2017-10-20T21:31:35.493-07:00
+	Description: Device '172.23.193.192'. Authentication failed for request from 'Unknown'.
+
+
+	447006169: Severity is CRITICAL
+
+	Last Reported: 2017-10-19T13:58:45.603-07:00
+	Description: Port 'port-channel124' (Description: 'FEX Uplink (CORE)') is down on device '172.23.193.192'.:administratively down
+
+
+	447006409: Severity is CRITICAL
+
+	Last Reported: 2017-10-19T08:29:12.018-07:00
+	Description: Port 'port-channel2' (Description: 'Not available') is down on device '172.23.193.192'.:operationally down
+
+
+	447006186: Severity is MINOR
+
+	Last Reported: 2017-10-18T16:08:23.305-07:00
+	Description: Device '172.23.193.192'. A port transitions from Learning state to Forwarding state, or from Forwarding state to Blocking state.
+
+

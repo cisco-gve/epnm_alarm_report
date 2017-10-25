@@ -1,0 +1,77 @@
+<style>
+.ul {
+    -webkit-column-count: 3; /* Chrome, Safari, Opera */
+    -moz-column-count: 3; /* Firefox */
+    column-count: 3;
+}
+.button {
+    float: right; 
+    border: none;
+    color: #2B4F73;
+    margin-right: 80px; 
+    padding: 10px;
+    border-radius: 8px;
+    font-size: 16px;
+    display: inline-block;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+.downloadbtn {
+    background-color: white; 
+    color: #2B4F73; 
+    border: 2px solid #2B4F73;
+}
+
+.downloadbtn:hover {
+    background-color: #2B4F73;
+    color: white;
+    border: 2px solid #2B4F73;
+;
+
+}
+</style>
+<div class="hero hero--indigo">
+    <div class="hero__content">
+        <div class="container center-xs">
+            <div class="row">
+                <div class="col-md-4 col-xl-2">
+                    <img style="max-height:150px" src="/static/web_app/public/img/globalnetwork.jpg">
+                </div>
+                <div class="col-md-8 col-xl-10">
+                    <div class="flex-fluid">
+                        <h1>Evolved Programmable Network Manager</h1>
+                        <h2>Alarm Reporting Application</h2>
+                        <br>
+                        <p class="text-large">See below for information regarding unresolved alarms and their cause
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="section">
+        <div class="panel panel--loose panel--bordered">
+            <button class="button downloadbtn"> <a href="/static/web_app/public/out_file/alarm_report.txt" download>Download Alarm Report</a></button>
+            <div class="row">
+                <div class="col-md-8 text-large">
+                    <h1 class="text-huge text-blue base-margin-bottom">{{ arg_in }} Alarms</h1>
+                </div>
+            </div>
+           <div style="padding-top: 10px">
+                    {%for k, v in alarm_info.items%}
+                        <p>{{ k }}: Severity is {{ v.sev }}</p>
+                        <p>Last Reported: {{v.tstamp}}</p>
+                        <p>Description: {{v.msg}}</p>
+                        <br>
+                    {% endfor %}
+            </div>
+            
+
+
+        </div>
+    </div>
+</div>

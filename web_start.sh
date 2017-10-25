@@ -1,10 +1,10 @@
 #!/bin/bash
 
 # Set up any db change
-python /usr/src/app/manage.py makemigrations
+python manage.py makemigrations
 
 # Updates/Creates Database
-python /usr/src/app/manage.py migrate
+python manage.py migrate
 
 # Starts server
-python /usr/src/app/manage.py runserver 0.0.0.0:8080
+python manage.py runserver 127.0.0.1:5002

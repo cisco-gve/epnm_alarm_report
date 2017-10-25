@@ -26,6 +26,9 @@ DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
 
+LOGIN_URL='/login'
+LOGIN_REDIRECT_URL = 'main'
+
 # Application definition
 
 INSTALLED_APPS = [
@@ -85,9 +88,9 @@ AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
     },
-    {
-        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
-    },
+    # {
+    #     'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
+    # },
     {
         'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
     },

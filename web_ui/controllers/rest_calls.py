@@ -72,10 +72,24 @@ class EPNM_Alarm:
         filters = '.full=true'
         no_cleared_filters = ".full=true&source=\""+dev+"\"&severity=ne(\"CLEARED\")"
         #***-->group filtering--> .group="GROUP"
-        response = self.make_get_req(self.authorization, self.host, extension, no_cleared_filters)#['queryResponse']['entity']
+        response = self.make_get_req(self.authorization, self.host, extension, no_cleared_filters)['queryResponse']['entity']
         #print len(response)
-
-        print json.dumps(response, indent=2)
+        r_dict={}
+        for item in response:
+            info={}
+            info['sev'] = item['alarmsDTO']['severity']
+            info['msg'] = item['alarmsDTO']['message']
+            info['tstamp'] = item['alarmsDTO']['lastUpdatedAt']
+            r_dict[item['alarmsDTO']['@id']] = info
+            try:
+                print r_dict['447006516']
+            except:
+                pass
+        for k in r_dict:
+            v=r_dict[k]
+            print k,v
+        return r_dict
+        # print json.dumps(response, indent=2)
 
 
     # ********** FILTERING NOT WORKING YET --GETTIN 403 DENIAL
@@ -106,7 +120,7 @@ class EPNM_Alarm:
         for item in response:
             if item['deviceCount'] != 0:
                 #print item['name'] + ' - '+ str(item['deviceCount'])
-                site_list.append('/'+item['name'])
+                site_list.append(item['name'][item['name'].rfind('/')+1:])
 
         return site_list
         #print json.dumps(response, indent=2)
@@ -132,23 +146,24 @@ class EPNM_Alarm:
 
         #uncomment below for single test case
         #TESTING WITH DEVICE ID 6051045 -- 172.23.193.142
-        get_alarms(auth, host_addr, "172.23.193.142")
+        # get_alarms(auth, host_addr, "172.23.193.142")
+
+        dev_list = get_group_devs(auth, host_addr, 'NCS1k-2k Network')
+        print dev_list
 
 
+        # sites = get_locations(auth, host_addr)
+        # site_mappings = {}
 
 
-        sites = get_locations(auth, host_addr)
-        site_mappings = {}
-
-
-        for loc in sites:
-            dev_list = get_group_devs(auth, host_addr, loc)
-            site_mappings[loc] = dev_list
+        # for loc in sites:
+        #     dev_list = get_group_devs(auth, host_addr, loc)
+        #     site_mappings[loc] = dev_list
         
-        #site pairings
-        for k in site_mappings:
-            v = site_mappings[k]
-            print (k,v)
+        # #site pairings
+        # for k in site_mappings:
+        #     v = site_mappings[k]
+        #     print (k,v)
 
         #alarm readout
         # for site in site_mappings:

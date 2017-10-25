@@ -22,5 +22,5 @@ from uidjangotemplate import views
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^web/', include('web_ui.urls')),
-    url(r'^', views.default_site)
+    # url(r'^', include('web_ui.urls'))
 ]
