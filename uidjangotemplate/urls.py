@@ -18,9 +18,10 @@ from django.conf.urls import url
 from django.contrib import admin
 
 from uidjangotemplate import views
+from web_ui import views as web_views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^web/', include('web_ui.urls')),
-    # url(r'^', include('web_ui.urls'))
+    # url(r'^', web_views.main)
 ]
