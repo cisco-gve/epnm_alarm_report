@@ -41,7 +41,13 @@ class EPNM_Alarm:
             id_list.append(str(item['$']))
         return id_list
 
-
+    def get_group_alarms(self, group):
+        group_alarms = {}
+        group_device_list = self.get_group_devs(group)
+        for device in group_device_list:
+            device_alarms = self.get_alarms(device)
+            group_alarms[device] = device_alarms
+        return group_alarms
 
 
     def get_group_devs(self, group):
@@ -81,13 +87,13 @@ class EPNM_Alarm:
             info['msg'] = item['alarmsDTO']['message']
             info['tstamp'] = item['alarmsDTO']['lastUpdatedAt']
             r_dict[item['alarmsDTO']['@id']] = info
-            try:
-                print r_dict['447006516']
-            except:
-                pass
-        for k in r_dict:
-            v=r_dict[k]
-            print k,v
+        #     try:
+        #         print r_dict['447006516']
+        #     except:
+        #         pass
+        # for k in r_dict:
+        #     v=r_dict[k]
+        #     print k,v
         return r_dict
         # print json.dumps(response, indent=2)
 
