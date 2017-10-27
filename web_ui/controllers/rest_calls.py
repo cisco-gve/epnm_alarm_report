@@ -93,16 +93,16 @@ class EPNM_Alarm:
 
 
     # ********** FILTERING NOT WORKING YET --GETTIN 403 DENIAL
-    def get_group_alarms(self, group):
-        extension = 'Alarms'
-        filters = '.full=true'
-        no_cleared_filters = ".full=true&severity=ne(\"CLEARED\")"
-        group_filter = ".group="+group
+    # def get_group_alarms(self, group):
+    #     extension = 'Alarms'
+    #     filters = '.full=true'
+    #     no_cleared_filters = ".full=true&severity=ne(\"CLEARED\")"
+    #     group_filter = ".group="+group
 
-        #response = make_get_req(auth, host, extension, no_cleared_filters)['queryResponse']['entity']
-        response = self.make_get_req(self.authorization, self.host, extension, group_filter)
-        print response
-        print json.dumps(response, indent=2)
+    #     #response = make_get_req(auth, host, extension, no_cleared_filters)['queryResponse']['entity']
+    #     response = self.make_get_req(self.authorization, self.host, extension, group_filter)
+    #     print response
+    #     print json.dumps(response, indent=2)
     # **************** FIX FILTERING
 
     def get_alarm_summary(self):
