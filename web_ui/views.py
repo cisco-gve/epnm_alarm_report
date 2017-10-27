@@ -58,19 +58,7 @@ def location_landing(request, loc):
     creds = epnm_info().get_info()
     epnm_obj = EPNM(creds['host'], creds['user'], creds['password'])
     dev_list = epnm_obj.get_group_devs(loc)
-    group_alarm_list = epnm_obj.get_group_alarms(loc)
-
-    # How to parse through group_alarm_list
-    for device in group_alarm_list:
-        print device
-        for alarm in group_alarm_list[device]:
-            for key in group_alarm_list[device][alarm]:
-                print group_alarm_list[device][alarm][key]
-            print
-        print
-
-
-
+    # group_alarm_list = epnm_obj.get_group_alarms(loc)
     if len(dev_list)==0: dev_list.append('No Devices With Alarms to Report')
     return render(request, 'web_app/location_landing.html', {
         'arg_in':loc, 

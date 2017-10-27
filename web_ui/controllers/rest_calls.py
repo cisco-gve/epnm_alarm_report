@@ -47,6 +47,15 @@ class EPNM_Alarm:
         for device in group_device_list:
             device_alarms = self.get_alarms(device)
             group_alarms[device] = device_alarms
+
+        # How to parse through group_alarm_list
+        # for device in group_alarm_list:
+        #     print device
+        #     for alarm in group_alarm_list[device]:
+        #         for key in group_alarm_list[device][alarm]:
+        #             print group_alarm_list[device][alarm][key]
+        #         print
+        #     print
         return group_alarms
 
 
