@@ -23,6 +23,11 @@ appModule.config(function($routeProvider, $locationProvider){
                 return 'ng/location/' + params.loc ;
             }
         })
+        .when('/alarms/:location', {
+            templateUrl: function(params) {
+                return 'ng/alarms/' + params.location ;
+            }
+        })
         .when('/device/:dev', {
             templateUrl: function(params) {
                 return 'ng/device/' + params.dev ;

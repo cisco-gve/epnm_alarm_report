@@ -29,7 +29,7 @@ class JSONResponse(HttpResponse):
 
 # ====================>>>>>>>> Templates <<<<<<<<====================
 @login_required(login_url='/web/login/')
-def index(request, loc='', dev=''):
+def index(request, loc='', dev='', location=''):
     print "INDEX"
     print loc
     creds = epnm_info().get_info()
@@ -59,10 +59,16 @@ def location_landing(request, loc):
     epnm_obj = EPNM(creds['host'], creds['user'], creds['password'])
     dev_list = epnm_obj.get_group_devs(loc)
     # group_alarm_list = epnm_obj.get_group_alarms(loc)
-    if len(dev_list)==0: dev_list.append('No Devices With Alarms to Report')
+    show = True
+    if len(dev_list)==0: 
+        dev_list.append('No Devices With Alarms to Report')
+        show=False
+
     return render(request, 'web_app/location_landing.html', {
         'arg_in':loc, 
-        'dev_list':dev_list
+        'dev_list':dev_list,
+        'show':show
+
     })
 
 
@@ -78,11 +84,11 @@ def device_landing(request, dev):
 
     d_string.append('+++++ '+dev+'Alarm Summary +++++')
     for k in alarm_info:
-        d_string.append('\t'+str(k)+': Severity is '+alarm_info[k]['sev']+'\n')
-        d_string.append('\tLast Reported: '+alarm_info[k]['tstamp'])
-        d_string.append('\tDescription: '+alarm_info[k]['msg'])
+        d_string.append('\t'+str(k)+': Severity is '+alarm_info[k]['Severity']+'\n')
+        d_string.append('\tLast Reported: '+alarm_info[k]['TimeStamp'])
+        d_string.append('\tDescription: '+alarm_info[k]['Description'])
         d_string.append('\n')
-    out_writer(d_string, dev)
+    out_writer(d_string)
 
     base = os.path.dirname(os.path.abspath(__file__))
     output_file = base+'/out_files/alarm_report.txt'
@@ -92,6 +98,45 @@ def device_landing(request, dev):
         'alarm_info':alarm_info,
         'download_link':output_file,
     })
+
+
+@login_required(login_url='/web/login/')
+def location_dump(request, location):
+    print 'LOCATION Dump'
+    print location
+    creds = epnm_info().get_info()
+    epnm_obj = EPNM(creds['host'], creds['user'], creds['password'])
+    alarm_list = epnm_obj.get_group_alarms(location)
+
+
+    for device in alarm_list:
+        print device
+        for alarm in alarm_list[device]:
+            print alarm
+            for key in alarm_list[device][alarm]:
+                key
+                print alarm_list[device][alarm][key]
+            print 
+
+    d_string=[]
+    d_string.append('+++++ '+location+' Alarm Summary +++++')
+    for device in alarm_list:
+        d_string.append('Device'+device)
+        for alarm in alarm_list[device]:
+            d_string.append('\tAlarmID: '+alarm)
+            for key in alarm_list[device][alarm]:
+                d_string.append('\t'+key+':'+alarm_list[device][alarm][key]) 
+            d_string.append('\n')
+        d_string.append('\n')
+    out_writer(d_string)
+
+    base = os.path.dirname(os.path.abspath(__file__))
+    output_file = base+'/out_files/alarm_report.txt'
+
+
+    return render(request, 'web_app/location_dump.html', {
+        'arg_in':location,
+        'alarm_list':alarm_list})
 
 
 def login_view(request):
@@ -109,7 +154,7 @@ def auth_view(request):
         return render(request, 'web_app/login.html', {'error_msg':'Invalid Login'})
         # Return an 'invalid login' error message.
         
-def out_writer(out_dump, dev):
+def out_writer(out_dump):
     base = os.path.dirname(os.path.abspath(__file__))
     output_file=base+'/static/web_app/public/out_file/alarm_report.txt'
     print output_file

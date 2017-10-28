@@ -31,12 +31,21 @@
             <div class="row">
                 <div class="col-md-8 text-large">
                     <h1 class="text-huge text-blue base-margin-bottom"><b>{{ arg_in }} Devices<b></h1>
+                    <hr>
                 </div>
             </div>
+            {%if show%}
+                <div><a href="{% url 'loc_alarms' location=arg_in %}">Click Here For Location Dump</a></div>
+            {%endif%}
             <table style="width: 100%">
                 {% for item in dev_list %}
                     {% cycle '<tr>' '' ''%}
-                        <td class="text-large" style="padding: 15px 5%"><a href="{% url 'device' dev=item %}">{{ item }}</a></td>
+                        {%if show%}
+                            <td class="text-large" style="padding: 15px 5%"><a href="{% url 'device' dev=item %}">{{ item }}</a></td>
+                        {%else%}
+                            <td class="text-large" style="padding: 15px 5%">{{ item }}</td>
+                        {%endif%}
+                        
                     {% cycle '' '' '</tr>' %}
                 {% endfor %}
             </table>

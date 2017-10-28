@@ -27,6 +27,7 @@ urlpatterns = [
     url(r'^login/$', views.login_view, name='login'),
     url(r'^location/(?P<loc>.*)/$', views.index, name='location'),
     url(r'^device/(?P<dev>.*)/$', views.index, name='device'),
+    url(r'^alarms/(?P<location>.*)/$', views.index, name='loc_alarms'),
 
     # Angular mappings
     url(r'^home/?$', views.index),
@@ -34,6 +35,7 @@ urlpatterns = [
     url(r'^ng/main/?$', views.main),
     url(r'^ng/location/(?P<loc>.*)/$', views.location_landing),
     url(r'^ng/device/(?P<dev>.*)/$', views.device_landing),
+    url(r'^ng/alarms/(?P<location>.*)/$', views.location_dump),
 
     # APIs Mappings
     url(r'^api/example/?$', views.api_example)

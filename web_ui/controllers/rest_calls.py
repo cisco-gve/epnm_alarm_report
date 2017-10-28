@@ -49,13 +49,14 @@ class EPNM_Alarm:
             group_alarms[device] = device_alarms
 
         # How to parse through group_alarm_list
-        # for device in group_alarm_list:
+        # for device in group_alarms:
         #     print device
-        #     for alarm in group_alarm_list[device]:
-        #         for key in group_alarm_list[device][alarm]:
-        #             print group_alarm_list[device][alarm][key]
-        #         print
-        #     print
+        #     # for alarm in group_alarms[device]:
+        #     #     for key in group_alarms[device][alarm]:
+        #     #         print group_alarms[device][alarm][key]
+        #     #     print
+        #     # print
+        # print group_alarms[device]
         return group_alarms
 
 
@@ -92,9 +93,9 @@ class EPNM_Alarm:
         r_dict={}
         for item in response:
             info={}
-            info['sev'] = item['alarmsDTO']['severity']
-            info['msg'] = item['alarmsDTO']['message']
-            info['tstamp'] = item['alarmsDTO']['lastUpdatedAt']
+            info['Severity'] = item['alarmsDTO']['severity']
+            info['Description'] = item['alarmsDTO']['message']
+            info['TimeStamp'] = item['alarmsDTO']['lastUpdatedAt']
             r_dict[item['alarmsDTO']['@id']] = info
         #     try:
         #         print r_dict['447006516']
