@@ -9,7 +9,7 @@ Contacts:
 * Michael Castellana (micastel@cisco.com)
 * Steven Yee (steveyee@cisco.com)
 * Jason Mah (jamah@cisco.com)
-* Santiago Flores (sfloresk@cisco.com )
+* Santiago Flores (sfloresk@cisco.com)
 
 
 
