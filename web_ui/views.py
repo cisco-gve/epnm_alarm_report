@@ -121,7 +121,7 @@ def location_dump(request, location):
     d_string=[]
     d_string.append('+++++ '+location+' Alarm Summary +++++')
     for device in alarm_list:
-        d_string.append('Device'+device)
+        d_string.append('Device '+device)
         for alarm in alarm_list[device]:
             d_string.append('\tAlarmID: '+alarm)
             for key in alarm_list[device][alarm]:
