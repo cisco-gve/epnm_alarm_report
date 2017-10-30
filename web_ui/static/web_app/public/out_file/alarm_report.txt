@@ -1,140 +1,199 @@
-+++++ San Jose Alarm Summary +++++
-Device172.23.193.191
-	AlarmID: 447006176
-	TimeStamp:2017-10-17T06:58:31.736-07:00
-	Severity:CRITICAL
-	Description:Port 'port-channel401' (Description: 'Not available') is down on device '172.23.193.191'.:operationally down
-
-
-	AlarmID: 447006177
-	TimeStamp:2017-10-17T07:00:47.206-07:00
-	Severity:CRITICAL
-	Description:Port 'port-channel402' (Description: 'Not available') is down on device '172.23.193.191'.:operationally down
-
-
-	AlarmID: 447006181
-	TimeStamp:2017-10-17T12:26:20.045-07:00
-	Severity:CRITICAL
-	Description:Port 'port-channel124' (Description: 'FEX Uplink (CORE)') is down on device '172.23.193.191'.:operationally down
-
-
-	AlarmID: 447005770
-	TimeStamp:2017-10-26T18:47:07.311-07:00
++++++ San Diego Alarm Summary +++++
+Device172.23.193.23
+	AlarmID: 447006395
+	TimeStamp:2017-10-19T07:40:24.715-07:00
 	Severity:MINOR
-	Description:Device '172.23.193.191'. Authentication failed for request from 'Unknown'.
+	Description:Remote MEP mpid 4 evc EVPL_1564 MA name EVPL_1564 in domain EVC changed state to down with event code TimeOut. 
 
 
-	AlarmID: 428525948
-	TimeStamp:2017-10-18T16:17:12.067-07:00
-	Severity:MINOR
-	Description:Device '172.23.193.191'. A port transitions from Learning state to Forwarding state, or from Forwarding state to Blocking state.
-
-
-	AlarmID: 447006207
-	TimeStamp:2017-10-19T07:50:20.743-07:00
+	AlarmID: 447006396
+	TimeStamp:2017-10-19T07:40:25.719-07:00
 	Severity:MAJOR
-	Description:Device '172.23.193.191'. Sending agent has become the new root of the Spanning Tree
+	Description:local mep with mpid 2 level 4 XCONN if_number 9 service instance 1 dir U Interface Gi0/0/2 enters AIS defect condition
 
 
-
-
-Device172.23.193.192
-	AlarmID: 447005769
-	TimeStamp:2017-10-26T18:47:07.371-07:00
+	AlarmID: 447006397
+	TimeStamp:2017-10-19T07:48:11.107-07:00
 	Severity:MINOR
-	Description:Device '172.23.193.192'. Authentication failed for request from 'Unknown'.
+	Description:Remote MEP mpid 1 evc EVPL_1564 MA name EVPL_1564 in domain EVC changed state to down with event code TimeOut. 
 
 
-	AlarmID: 447006169
-	TimeStamp:2017-10-19T13:58:45.603-07:00
+	AlarmID: 538036630
+	TimeStamp:2017-10-27T12:07:52.609-07:00
 	Severity:CRITICAL
-	Description:Port 'port-channel124' (Description: 'FEX Uplink (CORE)') is down on device '172.23.193.192'.:administratively down
+	Description:Device 'san-asr920-c.cisco.com' is unreachable.
 
 
-	AlarmID: 447006409
-	TimeStamp:2017-10-19T08:29:12.018-07:00
+
+
+Device172.23.193.22
+	AlarmID: 538036627
+	TimeStamp:2017-10-27T12:07:52.609-07:00
 	Severity:CRITICAL
-	Description:Port 'port-channel2' (Description: 'Not available') is down on device '172.23.193.192'.:operationally down
-
-
-	AlarmID: 447006186
-	TimeStamp:2017-10-18T16:08:23.305-07:00
-	Severity:MINOR
-	Description:Device '172.23.193.192'. A port transitions from Learning state to Forwarding state, or from Forwarding state to Blocking state.
+	Description:Device 'san-asr920-b.cisco.com' is unreachable.
 
 
 
 
-Device172.23.193.143
-	AlarmID: 511079723
-	TimeStamp:2017-10-24T03:01:25.157-07:00
+Device172.23.193.21
+	AlarmID: 538036629
+	TimeStamp:2017-10-27T12:07:52.609-07:00
 	Severity:CRITICAL
-	Description:Device: sjc-ncs4206-b.cisco.com MPLS Tunnel with id: 0 is Administratively DOWN 
-
-
-	AlarmID: 447005767
-	TimeStamp:2017-10-26T18:47:06.494-07:00
-	Severity:MINOR
-	Description:Device '172.23.193.143'. Authentication failed for request from '172.18.108.10'.
+	Description:Device 'san-asr920-a.cisco.com' is unreachable.
 
 
 
 
-Device172.23.193.142
-	AlarmID: 511079724
-	TimeStamp:2017-10-24T03:01:31.461-07:00
+Device172.23.193.26
+	AlarmID: 538036626
+	TimeStamp:2017-10-27T12:07:52.609-07:00
 	Severity:CRITICAL
-	Description:Device: sjc-ncs4206-a.cisco.com MPLS Tunnel with id: 0 is Administratively DOWN 
+	Description:Device 'san-asr920-f.cisco.com' is unreachable.
 
 
-	AlarmID: 488715598
-	TimeStamp:2017-10-20T11:02:30.272-07:00
+
+
+Device172.23.193.25
+	AlarmID: 538036611
+	TimeStamp:2017-10-27T12:02:20.042-07:00
+	Severity:MAJOR
+	Description:Interface GigabitEthernet0/0/1 enters AIS defect condition for Down direction
+
+
+	AlarmID: 538036610
+	TimeStamp:2017-10-27T12:02:18.994-07:00
+	Severity:MAJOR
+	Description:Process 1, Nbr 192.168.200.4 on TenGigabitEthernet0/0/12 from FULL to DOWN, Neighbor Down: Interface down or detached
+
+
+	AlarmID: 538036619
+	TimeStamp:2017-10-27T12:03:43.193-07:00
+	Severity:MAJOR
+	Description:LDP Neighbor 192.168.200.3:0 (4) is DOWN (Discovery Hello Hold Timer expired)
+
+
+	AlarmID: 538036609
+	TimeStamp:2017-10-27T12:02:18.325-07:00
+	Severity:MAJOR
+	Description:Process 1, Nbr 192.168.200.6 on TenGigabitEthernet0/0/13 from FULL to DOWN, Neighbor Down: Interface down or detached
+
+
+	AlarmID: 538036624
+	TimeStamp:2017-10-27T12:03:49.302-07:00
+	Severity:MAJOR
+	Description:LDP Neighbor 192.168.200.6:0 (2) is DOWN (Discovery Hello Hold Timer expired)
+
+
+	AlarmID: 538036620
+	TimeStamp:2017-10-27T12:03:43.193-07:00
+	Severity:MAJOR
+	Description:LDP Neighbor 192.168.200.2:0 (5) is DOWN (Discovery Hello Hold Timer expired)
+
+
+	AlarmID: 538036621
+	TimeStamp:2017-10-27T12:03:43.194-07:00
+	Severity:MAJOR
+	Description:LDP Neighbor 192.168.200.1:0 (3) is DOWN (Discovery Hello Hold Timer expired)
+
+
+	AlarmID: 538036622
+	TimeStamp:2017-10-27T12:03:44.257-07:00
+	Severity:MAJOR
+	Description:LDP Neighbor 192.168.200.4:0 (1) is DOWN (Discovery Hello Hold Timer expired)
+
+
+
+
+Device172.23.193.24
+	AlarmID: 538036628
+	TimeStamp:2017-10-27T12:07:52.609-07:00
 	Severity:CRITICAL
-	Description:Device:172.23.193.142, Sensor subslot 0/0 transceiver 0 Rx Power Sensor value -210 has exceeded the threshold -400.
+	Description:Device 'san-asr920-d.cisco.com' is unreachable.
 
 
-	AlarmID: 447005766
-	TimeStamp:2017-10-26T18:47:06.473-07:00
+
+
+Device172.23.193.130
+	AlarmID: 538036606
+	TimeStamp:2017-10-27T12:02:16.369-07:00
 	Severity:MINOR
-	Description:Device '172.23.193.142'. Authentication failed for request from '172.18.108.10'.
+	Description:E-LMI protocol stopped on GigabitEthernet0/2/1/2 
 
 
 
+	AlarmID: 538036607
+	TimeStamp:2017-10-27T12:02:16.414-07:00
+	Severity:MINOR
+	Description:Process 1, Nbr 192.168.200.6 on GigabitEthernet0/2/1/1 in area 200 from FULL to DOWN, Neighbor Down: interface down or detached, vrf default vrfid 0x60000000 
 
-Device172.23.193.140
-	AlarmID: 447006180
-	TimeStamp:2017-10-17T12:45:45.092-07:00
+
+
+	AlarmID: 538036617
+	TimeStamp:2017-10-27T12:02:37.021-07:00
 	Severity:CRITICAL
-	Description:Device:172.23.193.140, Sensor power Rx 0/1/0/1 value 51 has exceeded the threshold 0.
+	Description:Device:172.23.193.130, Sensor power Rx 0/2/1/1 value 10 has exceeded the threshold 0.
 
 
-	AlarmID: 428525953
-	TimeStamp:2017-10-25T22:59:52.119-07:00
+	AlarmID: 538036605
+	TimeStamp:2017-10-27T12:02:16.264-07:00
 	Severity:MINOR
-	Description:Interface 12 (SFP+_00_10GE) is down 
+	Description:Process 1, Nbr 192.168.200.1 on GigabitEthernet0/2/1/0 in area 200 from FULL to DOWN, Neighbor Down: interface down or detached, vrf default vrfid 0x60000000 
 
 
 
-	AlarmID: 447005765
-	TimeStamp:2017-10-26T18:47:06.440-07:00
+	AlarmID: 447005764
+	TimeStamp:2017-10-26T18:47:06.269-07:00
 	Severity:MINOR
-	Description:Device '172.23.193.140'. Authentication failed for request from 'Unknown'.
+	Description:Device '172.23.193.130'. Authentication failed for request from 'Unknown'.
 
 
-	AlarmID: 447006421
-	TimeStamp:2017-10-19T08:37:48.434-07:00
+	AlarmID: 538036613
+	TimeStamp:2017-10-27T12:02:20.259-07:00
+	Severity:CRITICAL
+	Description:Port 'GigabitEthernet0/2/1/2' (Description: 'Not available') is down on device '172.23.193.130'.:
+
+
+	AlarmID: 538036612
+	TimeStamp:2017-10-27T12:02:20.007-07:00
+	Severity:CRITICAL
+	Description:Port 'GigabitEthernet0/2/1/0' (Description: 'Not available') is down on device '172.23.193.130'.:
+
+
+	AlarmID: 447006405
+	TimeStamp:2017-10-19T08:28:46.568-07:00
 	Severity:MINOR
-	Description:E-LMI operational status on GigabitEthernet0/1/1/10 has changed to DOWN 
+	Description:E-LMI operational status on GigabitEthernet0/2/1/2 has changed to DOWN 
 
 
 
+	AlarmID: 538036614
+	TimeStamp:2017-10-27T12:02:22.275-07:00
+	Severity:CRITICAL
+	Description:Port 'GigabitEthernet0/2/1/1' (Description: 'Not available') is down on device '172.23.193.130'.:
 
 
-Device172.23.193.144
-	AlarmID: 447005768
-	TimeStamp:2017-10-26T18:47:06.509-07:00
-	Severity:MINOR
-	Description:Device '172.23.193.144'. Authentication failed for request from '172.18.108.10'.
+	AlarmID: 538036615
+	TimeStamp:2017-10-27T12:02:22.527-07:00
+	Severity:MAJOR
+	Description:Device 'san-asr9006-a' MPLS LDP Session is 'nonexistent' between Peer 'san-asr920-f.cisco.com (192.168.200.6)' and Local 'san-asr9006-a (192.168.200.7)'
+
+
+	AlarmID: 538036618
+	TimeStamp:2017-10-27T12:02:37.273-07:00
+	Severity:CRITICAL
+	Description:Device:172.23.193.130, Sensor power Rx 0/2/1/2 value 9 has exceeded the threshold 0.
+
+
+	AlarmID: 538036616
+	TimeStamp:2017-10-27T12:02:36.769-07:00
+	Severity:CRITICAL
+	Description:Device:172.23.193.130, Sensor power Rx 0/2/1/0 value 7 has exceeded the threshold 0.
+
+
+	AlarmID: 538036623
+	TimeStamp:2017-10-27T12:03:45.818-07:00
+	Severity:MAJOR
+	Description:Device 'san-asr9006-a' MPLS LDP Session is 'nonexistent' between Peer 'san-asr920-a.cisco.com (192.168.200.1)' and Local 'san-asr9006-a (192.168.200.7)'
 
 
 
