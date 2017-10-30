@@ -30,8 +30,8 @@ class JSONResponse(HttpResponse):
 # ====================>>>>>>>> Templates <<<<<<<<====================
 @login_required(login_url='/web/login/')
 def index(request, loc='', dev='', location=''):
-    print "INDEX"
-    print loc
+    # print "INDEX"
+    # print loc
     creds = epnm_info().get_info()
     epnm_obj = EPNM(creds['host'], creds['user'], creds['password'])
     location_list = epnm_obj.get_locations()
@@ -39,12 +39,12 @@ def index(request, loc='', dev='', location=''):
 
 @login_required(login_url='/web/login/')
 def home(request):
-    print "HOME"
+    # print "HOME"
     return render(request, 'web_app/home.html')
 
 @login_required(login_url='/web/login/')
 def main(request):
-    print "MAIN"
+    # print "MAIN"
     creds = epnm_info().get_info()
     epnm_obj = EPNM(creds['host'], creds['user'], creds['password'])
     location_list = epnm_obj.get_locations()
@@ -53,8 +53,8 @@ def main(request):
 
 @login_required(login_url='/web/login/')
 def location_landing(request, loc):
-    print 'LOCATION LANDING'
-    print loc
+    # print 'LOCATION LANDING'
+    # print loc
     creds = epnm_info().get_info()
     epnm_obj = EPNM(creds['host'], creds['user'], creds['password'])
     dev_list = epnm_obj.get_group_devs(loc)
@@ -75,8 +75,8 @@ def location_landing(request, loc):
 
 @login_required(login_url='/web/login/')
 def device_landing(request, dev):
-    print 'Device LANDING'
-    print dev
+    # print 'Device LANDING'
+    # print dev
     creds = epnm_info().get_info()
     epnm_obj = EPNM(creds['host'], creds['user'], creds['password'])
     alarm_info = epnm_obj.get_alarms(dev)
@@ -102,21 +102,11 @@ def device_landing(request, dev):
 
 @login_required(login_url='/web/login/')
 def location_dump(request, location):
-    print 'LOCATION Dump'
-    print location
+    # print 'LOCATION Dump'
+    # print location
     creds = epnm_info().get_info()
     epnm_obj = EPNM(creds['host'], creds['user'], creds['password'])
     alarm_list = epnm_obj.get_group_alarms(location)
-
-
-    for device in alarm_list:
-        print device
-        for alarm in alarm_list[device]:
-            print alarm
-            for key in alarm_list[device][alarm]:
-                key
-                print alarm_list[device][alarm][key]
-            print 
 
     d_string=[]
     d_string.append('+++++ '+location+' Alarm Summary +++++')
@@ -157,7 +147,7 @@ def auth_view(request):
 def out_writer(out_dump):
     base = os.path.dirname(os.path.abspath(__file__))
     output_file=base+'/static/web_app/public/out_file/alarm_report.txt'
-    print output_file
+    # print output_file
     f = open(output_file, 'w')
     for line in out_dump:
         f.write(line+'\n')
