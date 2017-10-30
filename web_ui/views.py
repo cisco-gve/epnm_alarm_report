@@ -28,8 +28,8 @@ class JSONResponse(HttpResponse):
 
 
 # ====================>>>>>>>> Templates <<<<<<<<====================
-@login_required(login_url='/web/login/')
-def index(request, loc='', dev='', location=''):
+@login_required(login_url = '/web/login/')
+def index(request, loc = '', dev = '', location = ''):
     # print "INDEX"
     # print loc
     creds = epnm_info().get_info()
@@ -37,12 +37,12 @@ def index(request, loc='', dev='', location=''):
     location_list = epnm_obj.get_locations()
     return render(request, 'web_app/index.html', {'list':location_list})
 
-@login_required(login_url='/web/login/')
+@login_required(login_url = '/web/login/')
 def home(request):
     # print "HOME"
     return render(request, 'web_app/home.html')
 
-@login_required(login_url='/web/login/')
+@login_required(login_url = '/web/login/')
 def main(request):
     # print "MAIN"
     creds = epnm_info().get_info()
@@ -51,7 +51,7 @@ def main(request):
     return render(request, 'web_app/main.html', {'list':location_list})
 
 
-@login_required(login_url='/web/login/')
+@login_required(login_url = '/web/login/')
 def location_landing(request, loc):
     # print 'LOCATION LANDING'
     # print loc
@@ -60,9 +60,9 @@ def location_landing(request, loc):
     dev_list = epnm_obj.get_group_devs(loc)
     # group_alarm_list = epnm_obj.get_group_alarms(loc)
     show = True
-    if len(dev_list)==0: 
+    if len(dev_list) == 0: 
         dev_list.append('No Devices With Alarms to Report')
-        show=False
+        show = False
 
     return render(request, 'web_app/location_landing.html', {
         'arg_in':loc, 
@@ -73,25 +73,25 @@ def location_landing(request, loc):
 
 
 
-@login_required(login_url='/web/login/')
+@login_required(login_url = '/web/login/')
 def device_landing(request, dev):
     # print 'Device LANDING'
     # print dev
     creds = epnm_info().get_info()
     epnm_obj = EPNM(creds['host'], creds['user'], creds['password'])
     alarm_info = epnm_obj.get_alarms(dev)
-    d_string=[]
+    d_string = []
 
-    d_string.append('+++++ '+dev+' Alarm Summary +++++')
+    d_string.append('+++++ ' + dev + ' Alarm Summary +++++')
     for k in alarm_info:
-        d_string.append('\t'+str(k)+': Severity is '+alarm_info[k]['Severity']+'\n')
-        d_string.append('\tLast Reported: '+alarm_info[k]['TimeStamp'])
-        d_string.append('\tDescription: '+alarm_info[k]['Description'])
+        d_string.append('\t' + str(k) + ': Severity is ' + alarm_info[k]['Severity'] + '\n')
+        d_string.append('\tLast Reported: ' + alarm_info[k]['TimeStamp'])
+        d_string.append('\tDescription: ' + alarm_info[k]['Description'])
         d_string.append('\n')
     out_writer(d_string)
 
     base = os.path.dirname(os.path.abspath(__file__))
-    output_file = base+'/out_files/alarm_report.txt'
+    output_file = base + '/out_files/alarm_report.txt'
 
     return render(request, 'web_app/device_landing.html', {
         'arg_in':dev, 
@@ -100,7 +100,7 @@ def device_landing(request, dev):
     })
 
 
-@login_required(login_url='/web/login/')
+@login_required(login_url = '/web/login/')
 def location_dump(request, location):
     # print 'LOCATION Dump'
     # print location
@@ -108,20 +108,20 @@ def location_dump(request, location):
     epnm_obj = EPNM(creds['host'], creds['user'], creds['password'])
     alarm_list = epnm_obj.get_group_alarms(location)
 
-    d_string=[]
-    d_string.append('+++++ '+location+' Alarm Summary +++++')
+    d_string = []
+    d_string.append('+++++ ' + location + ' Alarm Summary +++++')
     for device in alarm_list:
-        d_string.append('Device '+device)
+        d_string.append('Device ' + device)
         for alarm in alarm_list[device]:
-            d_string.append('\tAlarmID: '+alarm)
+            d_string.append('\tAlarmID: ' + alarm)
             for key in alarm_list[device][alarm]:
-                d_string.append('\t'+key+':'+alarm_list[device][alarm][key]) 
+                d_string.append('\t' + key + ':' + alarm_list[device][alarm][key]) 
             d_string.append('\n')
         d_string.append('\n')
     out_writer(d_string)
 
     base = os.path.dirname(os.path.abspath(__file__))
-    output_file = base+'/out_files/alarm_report.txt'
+    output_file = base + '/out_files/alarm_report.txt'
 
 
     return render(request, 'web_app/location_dump.html', {
@@ -135,7 +135,7 @@ def login_view(request):
 def auth_view(request):
     username = request.POST['username']
     password = request.POST['password']
-    user = authenticate(request, username=username, password=password)
+    user = authenticate(request, username = username, password = password)
     if user is not None:
         login(request, user)
         return redirect('/web/')
@@ -146,11 +146,11 @@ def auth_view(request):
         
 def out_writer(out_dump):
     base = os.path.dirname(os.path.abspath(__file__))
-    output_file=base+'/static/web_app/public/out_file/alarm_report.txt'
+    output_file = base + '/static/web_app/public/out_file/alarm_report.txt'
     # print output_file
     f = open(output_file, 'w')
     for line in out_dump:
-        f.write(line+'\n')
+        f.write(line + '\n')
     f.close()
 
 
@@ -158,7 +158,7 @@ def out_writer(out_dump):
 def download(request, path):
     filename = "alarm_report.txt"
     content = 'any string generated by django'
-    return HttpResponse(content, content_type='text/plain')
+    return HttpResponse(content, content_type = 'text/plain')
 
 
 
