@@ -82,7 +82,7 @@ def device_landing(request, dev):
     alarm_info = epnm_obj.get_alarms(dev)
     d_string=[]
 
-    d_string.append('+++++ '+dev+'Alarm Summary +++++')
+    d_string.append('+++++ '+dev+' Alarm Summary +++++')
     for k in alarm_info:
         d_string.append('\t'+str(k)+': Severity is '+alarm_info[k]['Severity']+'\n')
         d_string.append('\tLast Reported: '+alarm_info[k]['TimeStamp'])
