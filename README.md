@@ -28,7 +28,7 @@ There are two ways to run the application. The second way is recommended as it w
 1) Execute in the root directory of the distribution:
  - python manage.py makemigrations
  - python manage.py migrate
- - python manage.py runserver 0.0.0.0:YOUR_PORT
+ - python manage.py runserver 127.0.0.1:5002
 
 2) The root directory contains a shell script that will perform the three commands in step 1.
 To run this script and start the application with one command, enter the following in the root directory:
