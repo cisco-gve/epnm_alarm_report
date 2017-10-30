@@ -35,7 +35,7 @@ To run this script and start the application with one command, enter the followi
  - ./web_start.sh
 This will run the web server and content can be accessed by navigating to 127.0.0.1:5002/web/ in your browser.
 
-Log in with username: admin and password: cisco
+Log in with username: admin and password: cisco123
 
 **Known Issues**
 
