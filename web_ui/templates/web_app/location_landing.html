@@ -34,9 +34,11 @@
                     <hr>
                 </div>
             </div>
+            <br>
             {%if show%}
-                <div><a href="{% url 'loc_alarms' location=arg_in %}">Click Here For Location Dump</a></div>
+                <div><a href="{% url 'loc_alarms' location=arg_in %}"><b>Click Here For Full Location Report</b></a></div>
             {%endif%}
+            <br>
             <table style="width: 100%">
                 {% for item in dev_list %}
                     {% cycle '<tr>' '' ''%}
