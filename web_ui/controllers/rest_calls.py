@@ -4,7 +4,13 @@ __email__ = "micastel@cisco.com and steveyee@cisco.com"
 __status__ = "Development"
 
 #import necessary libraries
-import base64, getpass, requests, json, sys
+import base64, getpass, requests, json, sys, smtplib, csv, os
+from .. import opensesame
+from email.mime.multipart import MIMEMultipart
+from email.message import Message
+from email.mime.text import MIMEText
+from email import encoders
+from email.mime.base import MIMEBase
 
 class EPNM_Alarm:
 
@@ -13,6 +19,7 @@ class EPNM_Alarm:
     def __init__(self,host, user, pwd, verify=False):
         self.authorization = "Basic " + base64.b64encode(user + ":" + pwd)
         self.host = host
+
 
     def get_headers(self, auth, content_type = "application", cache_control = "no-cache"):
         headers={
@@ -40,6 +47,27 @@ class EPNM_Alarm:
         for item in response:
             id_list.append(str(item['$']))
         return id_list
+
+    def send_email(self, destination_address, source_address, subject, attachment_url):
+        email_message = MIMEMultipart()
+        email_message['subject'] = subject
+        email_message['From'] = source_address
+        email_message['To'] = destination_address
+        with open(attachment_url) as file:
+            attachment = MIMEBase('application', 'octet-stream')
+            attachment.set_payload(file.read())
+            encoders.encode_base64(attachment)
+            attachment.add_header('Content-Disposition', 'attachment',
+                              filename=os.path.basename(attachment_url))
+        email_message.attach(attachment)
+
+        server = smtplib.SMTP('smtp.gmail.com', 587)
+        server.ehlo()
+        server.starttls()
+        server.login(source_address, opensesame.password)
+        server.sendmail(source_address, destination_address, email_message.as_string())
+        server.quit()
+
 
     def get_group_alarms(self, group):
         group_alarms = {}

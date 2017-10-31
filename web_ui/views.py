@@ -88,10 +88,13 @@ def device_landing(request, dev):
         d_string.append('\tLast Reported: ' + alarm_info[k]['TimeStamp'])
         d_string.append('\tDescription: ' + alarm_info[k]['Description'])
         d_string.append('\n')
-    out_writer(d_string)
+    download_url = out_writer(d_string)
 
     base = os.path.dirname(os.path.abspath(__file__))
     output_file = base + '/out_files/alarm_report.txt'
+    print download_url
+
+    # epnm_obj.send_email("steveyee@cisco.com", "epnm84@gmail.com", "TEST", download_url)
 
     return render(request, 'web_app/device_landing.html', {
         'arg_in':dev, 
@@ -152,6 +155,7 @@ def out_writer(out_dump):
     for line in out_dump:
         f.write(line + '\n')
     f.close()
+    return output_file
 
 
 
