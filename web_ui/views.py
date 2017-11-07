@@ -6,6 +6,7 @@ import traceback
 from django.http import HttpResponse
 from rest_framework.renderers import JSONRenderer
 import os.path
+import csv
 
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.decorators import login_required
@@ -30,8 +31,6 @@ class JSONResponse(HttpResponse):
 # ====================>>>>>>>> Templates <<<<<<<<====================
 @login_required(login_url = '/web/login/')
 def index(request, loc = '', dev = '', location = ''):
-    # print "INDEX"
-    # print loc
     creds = epnm_info().get_info()
     epnm_obj = EPNM(creds['host'], creds['user'], creds['password'])
     location_list = epnm_obj.get_locations()
@@ -39,12 +38,10 @@ def index(request, loc = '', dev = '', location = ''):
 
 @login_required(login_url = '/web/login/')
 def home(request):
-    # print "HOME"
     return render(request, 'web_app/home.html')
 
 @login_required(login_url = '/web/login/')
 def main(request):
-    # print "MAIN"
     creds = epnm_info().get_info()
     epnm_obj = EPNM(creds['host'], creds['user'], creds['password'])
     location_list = epnm_obj.get_locations()
@@ -53,48 +50,37 @@ def main(request):
 
 @login_required(login_url = '/web/login/')
 def location_landing(request, loc):
-    # print 'LOCATION LANDING'
-    # print loc
     creds = epnm_info().get_info()
     epnm_obj = EPNM(creds['host'], creds['user'], creds['password'])
     dev_list = epnm_obj.get_group_devs(loc)
-    # group_alarm_list = epnm_obj.get_group_alarms(loc)
     show = True
     if len(dev_list) == 0: 
         dev_list.append('No Devices With Alarms to Report')
         show = False
-
     return render(request, 'web_app/location_landing.html', {
         'arg_in':loc, 
         'dev_list':dev_list,
         'show':show
-
     })
-
-
 
 @login_required(login_url = '/web/login/')
 def device_landing(request, dev):
-    # print 'Device LANDING'
-    # print dev
     creds = epnm_info().get_info()
     epnm_obj = EPNM(creds['host'], creds['user'], creds['password'])
     alarm_info = epnm_obj.get_alarms(dev)
-    d_string = []
 
+    d_string = []
     d_string.append('+++++ ' + dev + ' Alarm Summary +++++')
     for k in alarm_info:
         d_string.append('\t' + str(k) + ': Severity is ' + alarm_info[k]['Severity'] + '\n')
         d_string.append('\tLast Reported: ' + alarm_info[k]['TimeStamp'])
         d_string.append('\tDescription: ' + alarm_info[k]['Description'])
         d_string.append('\n')
-    download_url = out_writer(d_string)
+
+    download_url = device_writer(dev, alarm_info)
 
     base = os.path.dirname(os.path.abspath(__file__))
-    output_file = base + '/out_files/alarm_report.txt'
-    print download_url
-
-    # epnm_obj.send_email("steveyee@cisco.com", "epnm84@gmail.com", "TEST", download_url)
+    output_file = base + "/out_file/alarm_report.csv"
 
     return render(request, 'web_app/device_landing.html', {
         'arg_in':dev, 
@@ -105,8 +91,6 @@ def device_landing(request, dev):
 
 @login_required(login_url = '/web/login/')
 def location_dump(request, location):
-    # print 'LOCATION Dump'
-    # print location
     creds = epnm_info().get_info()
     epnm_obj = EPNM(creds['host'], creds['user'], creds['password'])
     alarm_list = epnm_obj.get_group_alarms(location)
@@ -118,18 +102,32 @@ def location_dump(request, location):
         for alarm in alarm_list[device]:
             d_string.append('\tAlarmID: ' + alarm)
             for key in alarm_list[device][alarm]:
-                d_string.append('\t' + key + ':' + alarm_list[device][alarm][key]) 
+                d_string.append('\t' + key + ':' + str(alarm_list[device][alarm][key])) 
             d_string.append('\n')
         d_string.append('\n')
-    out_writer(d_string)
+    group_writer(alarm_list)
 
     base = os.path.dirname(os.path.abspath(__file__))
-    output_file = base + '/out_files/alarm_report.txt'
+    output_file = base + '/out_files/alarm_report.csv'
 
+    alarm_breakdown={}
+    total_alarms = 0
+    for item in alarm_list:
+        for k in alarm_list[item]:
+            for v in alarm_list[item][k]:
+                if v=='Severity':
+                    sev = alarm_list[item][k][v]
+                    total_alarms += 1
+                    if sev not in alarm_breakdown:
+                        alarm_breakdown[sev]=1
+                    else:
+                        alarm_breakdown[sev]+=1
 
     return render(request, 'web_app/location_dump.html', {
         'arg_in':location,
-        'alarm_list':alarm_list})
+        'alarm_list':alarm_list,
+        'alarm_breakdown':alarm_breakdown,
+        'total_alarms':total_alarms})
 
 
 def login_view(request):
@@ -146,11 +144,73 @@ def auth_view(request):
     else:
         return render(request, 'web_app/login.html', {'error_msg':'Invalid Login'})
         # Return an 'invalid login' error message.
-        
+
+def send_group_email_view(request):
+    if request.GET.get('mybtn'):
+        location = str(request.GET.get('mybtn'))
+        creds = epnm_info().get_info()
+        epnm_obj = EPNM(creds['host'], creds['user'], creds['password'])
+        if epnm_obj.get_group_alarms(location) != {}:
+            print "found"
+            base = os.path.dirname(os.path.abspath(__file__))
+            download_url = base + '/static/web_app/public/out_file/alarm_report.csv'
+            subject = "EPNM Alarm Report for Devices in " + location
+            epnm_obj.send_email("steveyee@cisco.com", "epnm84@gmail.com", subject, download_url)
+        redirect_url = "/web/alarms/" + location
+        return redirect(redirect_url)
+
+def send_device_email_view(request):
+    if request.GET.get('mybtn'):
+        device = str(request.GET.get('mybtn'))
+        print "Device is " + device
+        creds = epnm_info().get_info()
+        epnm_obj = EPNM(creds['host'], creds['user'], creds['password'])
+        if epnm_obj.get_alarms(device) != {}:
+            base = os.path.dirname(os.path.abspath(__file__))
+            download_url = base + '/static/web_app/public/out_file/alarm_report.csv'
+            subject = "EPNM Alarm Report for Device " + device
+            epnm_obj.send_email("steveyee@cisco.com", "epnm84@gmail.com", subject, download_url)
+        redirect_url = "/web/device/" + device
+        return redirect(redirect_url)
+
+def group_writer(alarm_list):
+    base = os.path.dirname(os.path.abspath(__file__))
+    output_file = base + "/static/web_app/public/out_file/alarm_report.csv"
+
+    with open(output_file, 'wb') as alarm_report:
+        thisWriter = csv.writer(alarm_report)
+        thisWriter.writerow(['Failure Source', 'Key', 'Acknowledgment Status', 'Time Stamp Created', 'Notes', 'Last Updated At', 'Description', 'Severity', ])
+        for device_ip in alarm_list:
+            for alarm in alarm_list[device_ip]:
+                device_string = []
+                device_string.append(device_ip)
+                device_string.append(alarm)
+                for key in alarm_list[device_ip][alarm]:                        
+                    if key != "FailureSource":
+                        device_string.append(alarm_list[device_ip][alarm][key])
+                thisWriter.writerow(device_string)
+    return output_file
+
+def device_writer(dev, alarm_info):
+    base = os.path.dirname(os.path.abspath(__file__))
+    output_file = base + "/static/web_app/public/out_file/alarm_report.csv"
+
+    with open(output_file, 'wb') as alarm_report:
+        thisWriter = csv.writer(alarm_report)
+        thisWriter.writerow(['Failure Source', 'Key', 'Acknowledgment Status', 'Time Stamp Created', 'Notes', 'Last Updated At', 'Description', 'Severity'])
+        for device_id in alarm_info:
+            device_string = []
+            device_string.append(alarm_info[device_id]['FailureSource'])
+            device_string.append(str(device_id))
+            for attribute in alarm_info[device_id]:
+                if attribute != "FailureSource":
+                    device_string.append(alarm_info[device_id][attribute])
+            thisWriter.writerow(device_string)
+    return output_file
+
 def out_writer(out_dump):
     base = os.path.dirname(os.path.abspath(__file__))
     output_file = base + '/static/web_app/public/out_file/alarm_report.txt'
-    # print output_file
     f = open(output_file, 'w')
     for line in out_dump:
         f.write(line + '\n')

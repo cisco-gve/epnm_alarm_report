@@ -1,0 +1,4 @@
+Failure Source,Key,Acknowledgment Status,Time Stamp Created,Notes,Last Updated At,Description,Severity
+10.89.195.244,538036597,True,2017-10-27T09:58:30-07:00,"{u'annotation': {u'noteText': u'Alarm acknowledged ', u'creationTimestamp': u'2017-11-01T09:01:34.180-07:00', u'creatorId': u'root'}}",2017-10-27T09:58:30-07:00,Improper Removal,CRITICAL
+10.89.195.244,538036598,True,2017-10-27T09:58:30-07:00,"{u'annotation': {u'noteText': u'Alarm acknowledged ', u'creationTimestamp': u'2017-11-01T09:01:34.189-07:00', u'creatorId': u'root'}}",2017-10-27T09:58:30-07:00,Improper Removal,CRITICAL
+10.89.195.244,538036599,True,2017-10-27T09:58:30-07:00,"{u'annotation': {u'noteText': u'Alarm acknowledged ', u'creationTimestamp': u'2017-11-01T09:01:34.171-07:00', u'creatorId': u'root'}}",2017-10-27T09:58:30-07:00,Improper Removal,CRITICAL

@@ -1,0 +1,2 @@
+Failure Source,Key,Acknowledgment Status,Time Stamp Created,Last Updated At,Description,Severity,Notes
+172.23.193.144,447005768,False,2017-10-11T19:32:06.075-07:00,2017-10-26T18:47:06.509-07:00,Device '172.23.193.144'. Authentication failed for request from '172.18.108.10'.,MINOR

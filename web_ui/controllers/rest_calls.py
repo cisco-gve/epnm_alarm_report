@@ -53,6 +53,8 @@ class EPNM_Alarm:
         email_message['subject'] = subject
         email_message['From'] = source_address
         email_message['To'] = destination_address
+        message_body = MIMEText("Attached is an alarm report.")
+        email_message.attach(message_body)
         with open(attachment_url) as file:
             attachment = MIMEBase('application', 'octet-stream')
             attachment.set_payload(file.read())
@@ -123,7 +125,14 @@ class EPNM_Alarm:
             info={}
             info['Severity'] = item['alarmsDTO']['severity']
             info['Description'] = item['alarmsDTO']['message']
-            info['TimeStamp'] = item['alarmsDTO']['lastUpdatedAt']
+            info['TimeStamp'] = item['alarmsDTO']['timeStamp']
+            info['FailureSource'] = item['alarmsDTO']['source']
+            info['LastUpdatedAt'] = item['alarmsDTO']['lastUpdatedAt']
+            info['AcknowledgmentStatus'] = item['alarmsDTO']['acknowledgementStatus']
+            if 'annotations' in item['alarmsDTO']:
+                info['Notes'] = item['alarmsDTO']['annotations']
+            else:
+                info['Notes'] = "No Notes"
             r_dict[item['alarmsDTO']['@id']] = info
         #     try:
         #         print r_dict['447006516']

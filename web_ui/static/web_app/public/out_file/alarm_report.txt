@@ -1,199 +1,1952 @@
-+++++ San Diego Alarm Summary +++++
-Device172.23.193.23
-	AlarmID: 447006395
-	TimeStamp:2017-10-19T07:40:24.715-07:00
++++++ All Locations Alarm Summary +++++
+Device 172.23.193.191
+	AlarmID: 447006176
+	AcknowledgmentStatus:False
+	TimeStamp:2017-10-17T06:16:22.789-07:00
+	LastUpdatedAt:2017-10-17T06:58:31.736-07:00
+	FailureSource:172.23.193.191
+	Description:Port 'port-channel401' (Description: 'Not available') is down on device '172.23.193.191'.:operationally down
+	Severity:CRITICAL
+
+
+	AlarmID: 447006177
+	AcknowledgmentStatus:False
+	TimeStamp:2017-10-17T06:16:34.106-07:00
+	LastUpdatedAt:2017-10-17T07:00:47.206-07:00
+	FailureSource:172.23.193.191
+	Description:Port 'port-channel402' (Description: 'Not available') is down on device '172.23.193.191'.:operationally down
+	Severity:CRITICAL
+
+
+	AlarmID: 447006181
+	AcknowledgmentStatus:False
+	TimeStamp:2017-10-17T07:15:23.550-07:00
+	LastUpdatedAt:2017-10-17T12:26:20.045-07:00
+	FailureSource:172.23.193.191
+	Description:Port 'port-channel124' (Description: 'FEX Uplink (CORE)') is down on device '172.23.193.191'.:operationally down
+	Severity:CRITICAL
+
+
+	AlarmID: 447005770
+	AcknowledgmentStatus:False
+	TimeStamp:2017-10-11T19:32:06.704-07:00
+	LastUpdatedAt:2017-11-01T06:39:20.252-07:00
+	FailureSource:172.23.193.191
+	Description:Device '172.23.193.191'. Authentication failed for request from 'Unknown'.
 	Severity:MINOR
-	Description:Remote MEP mpid 4 evc EVPL_1564 MA name EVPL_1564 in domain EVC changed state to down with event code TimeOut. 
 
 
-	AlarmID: 447006396
-	TimeStamp:2017-10-19T07:40:25.719-07:00
-	Severity:MAJOR
-	Description:local mep with mpid 2 level 4 XCONN if_number 9 service instance 1 dir U Interface Gi0/0/2 enters AIS defect condition
-
-
-	AlarmID: 447006397
-	TimeStamp:2017-10-19T07:48:11.107-07:00
+	AlarmID: 428525948
+	AcknowledgmentStatus:False
+	TimeStamp:2017-10-09T08:12:47.106-07:00
+	LastUpdatedAt:2017-11-04T06:14:34.742-07:00
+	FailureSource:172.23.193.191
+	Description:Device '172.23.193.191'. A port transitions from Learning state to Forwarding state, or from Forwarding state to Blocking state.
 	Severity:MINOR
-	Description:Remote MEP mpid 1 evc EVPL_1564 MA name EVPL_1564 in domain EVC changed state to down with event code TimeOut. 
 
 
-	AlarmID: 538036630
-	TimeStamp:2017-10-27T12:07:52.609-07:00
-	Severity:CRITICAL
-	Description:Device 'san-asr920-c.cisco.com' is unreachable.
-
-
-
-
-Device172.23.193.22
-	AlarmID: 538036627
-	TimeStamp:2017-10-27T12:07:52.609-07:00
-	Severity:CRITICAL
-	Description:Device 'san-asr920-b.cisco.com' is unreachable.
-
-
-
-
-Device172.23.193.21
-	AlarmID: 538036629
-	TimeStamp:2017-10-27T12:07:52.609-07:00
-	Severity:CRITICAL
-	Description:Device 'san-asr920-a.cisco.com' is unreachable.
-
-
-
-
-Device172.23.193.26
-	AlarmID: 538036626
-	TimeStamp:2017-10-27T12:07:52.609-07:00
-	Severity:CRITICAL
-	Description:Device 'san-asr920-f.cisco.com' is unreachable.
-
-
-
-
-Device172.23.193.25
-	AlarmID: 538036611
-	TimeStamp:2017-10-27T12:02:20.042-07:00
+	AlarmID: 447006207
+	AcknowledgmentStatus:False
+	TimeStamp:2017-10-17T12:55:04.415-07:00
+	LastUpdatedAt:2017-10-19T07:50:20.743-07:00
+	FailureSource:172.23.193.191
+	Description:Device '172.23.193.191'. Sending agent has become the new root of the Spanning Tree
 	Severity:MAJOR
-	Description:Interface GigabitEthernet0/0/1 enters AIS defect condition for Down direction
-
-
-	AlarmID: 538036610
-	TimeStamp:2017-10-27T12:02:18.994-07:00
-	Severity:MAJOR
-	Description:Process 1, Nbr 192.168.200.4 on TenGigabitEthernet0/0/12 from FULL to DOWN, Neighbor Down: Interface down or detached
-
-
-	AlarmID: 538036619
-	TimeStamp:2017-10-27T12:03:43.193-07:00
-	Severity:MAJOR
-	Description:LDP Neighbor 192.168.200.3:0 (4) is DOWN (Discovery Hello Hold Timer expired)
-
-
-	AlarmID: 538036609
-	TimeStamp:2017-10-27T12:02:18.325-07:00
-	Severity:MAJOR
-	Description:Process 1, Nbr 192.168.200.6 on TenGigabitEthernet0/0/13 from FULL to DOWN, Neighbor Down: Interface down or detached
-
-
-	AlarmID: 538036624
-	TimeStamp:2017-10-27T12:03:49.302-07:00
-	Severity:MAJOR
-	Description:LDP Neighbor 192.168.200.6:0 (2) is DOWN (Discovery Hello Hold Timer expired)
-
-
-	AlarmID: 538036620
-	TimeStamp:2017-10-27T12:03:43.193-07:00
-	Severity:MAJOR
-	Description:LDP Neighbor 192.168.200.2:0 (5) is DOWN (Discovery Hello Hold Timer expired)
-
-
-	AlarmID: 538036621
-	TimeStamp:2017-10-27T12:03:43.194-07:00
-	Severity:MAJOR
-	Description:LDP Neighbor 192.168.200.1:0 (3) is DOWN (Discovery Hello Hold Timer expired)
-
-
-	AlarmID: 538036622
-	TimeStamp:2017-10-27T12:03:44.257-07:00
-	Severity:MAJOR
-	Description:LDP Neighbor 192.168.200.4:0 (1) is DOWN (Discovery Hello Hold Timer expired)
 
 
 
 
-Device172.23.193.24
-	AlarmID: 538036628
-	TimeStamp:2017-10-27T12:07:52.609-07:00
-	Severity:CRITICAL
-	Description:Device 'san-asr920-d.cisco.com' is unreachable.
-
-
-
-
-Device172.23.193.130
-	AlarmID: 538036606
-	TimeStamp:2017-10-27T12:02:16.369-07:00
+Device 172.23.193.192
+	AlarmID: 447005769
+	AcknowledgmentStatus:False
+	TimeStamp:2017-10-11T19:32:06.704-07:00
+	LastUpdatedAt:2017-10-26T18:47:07.371-07:00
+	FailureSource:172.23.193.192
+	Description:Device '172.23.193.192'. Authentication failed for request from 'Unknown'.
 	Severity:MINOR
-	Description:E-LMI protocol stopped on GigabitEthernet0/2/1/2 
 
 
+	AlarmID: 447006169
+	AcknowledgmentStatus:False
+	TimeStamp:2017-10-16T13:53:55.816-07:00
+	LastUpdatedAt:2017-10-19T13:58:45.603-07:00
+	FailureSource:172.23.193.192
+	Description:Port 'port-channel124' (Description: 'FEX Uplink (CORE)') is down on device '172.23.193.192'.:administratively down
+	Severity:CRITICAL
 
-	AlarmID: 538036607
-	TimeStamp:2017-10-27T12:02:16.414-07:00
+
+	AlarmID: 447006409
+	AcknowledgmentStatus:False
+	TimeStamp:2017-10-19T08:29:11.210-07:00
+	LastUpdatedAt:2017-10-19T08:29:12.018-07:00
+	FailureSource:172.23.193.192
+	Description:Port 'port-channel2' (Description: 'Not available') is down on device '172.23.193.192'.:operationally down
+	Severity:CRITICAL
+
+
+	AlarmID: 447006186
+	AcknowledgmentStatus:False
+	TimeStamp:2017-10-17T07:35:14.784-07:00
+	LastUpdatedAt:2017-10-18T16:08:23.305-07:00
+	FailureSource:172.23.193.192
+	Description:Device '172.23.193.192'. A port transitions from Learning state to Forwarding state, or from Forwarding state to Blocking state.
 	Severity:MINOR
-	Description:Process 1, Nbr 192.168.200.6 on GigabitEthernet0/2/1/1 in area 200 from FULL to DOWN, Neighbor Down: interface down or detached, vrf default vrfid 0x60000000 
 
 
 
+
+Device 10.89.204.233
+	AlarmID: 511079653
+	AcknowledgmentStatus:False
+	TimeStamp:2017-10-23T10:35:30-07:00
+	LastUpdatedAt:2017-10-23T10:35:30-07:00
+	FailureSource:10.89.204.233
+	Description:Loss of Signal - Payload
+	Severity:CRITICAL
+
+
+	AlarmID: 625226835
+	AcknowledgmentStatus:False
+	TimeStamp:2017-10-31T07:49:14.147-07:00
+	LastUpdatedAt:2017-10-31T07:49:14.147-07:00
+	FailureSource:10.89.204.233
+	Description:Device 'ncs1k-SCTE' is unreachable.
+	Severity:CRITICAL
+
+
+	AlarmID: 511079654
+	AcknowledgmentStatus:False
+	TimeStamp:2017-10-23T10:35:30-07:00
+	LastUpdatedAt:2017-10-23T10:35:30-07:00
+	FailureSource:10.89.204.233
+	Description:Loss of Signal - Payload
+	Severity:CRITICAL
+
+
+
+
+Device 10.89.195.244
+	AlarmID: 538036597
+	AcknowledgmentStatus:True
+	TimeStamp:2017-10-27T09:58:30-07:00
+	Notes:{u'annotation': {u'noteText': u'Alarm acknowledged ', u'creationTimestamp': u'2017-11-01T09:01:34.180-07:00', u'creatorId': u'root'}}
+	LastUpdatedAt:2017-10-27T09:58:30-07:00
+	FailureSource:10.89.195.244
+	Description:Improper Removal
+	Severity:CRITICAL
+
+
+	AlarmID: 538036598
+	AcknowledgmentStatus:True
+	TimeStamp:2017-10-27T09:58:30-07:00
+	Notes:{u'annotation': {u'noteText': u'Alarm acknowledged ', u'creationTimestamp': u'2017-11-01T09:01:34.189-07:00', u'creatorId': u'root'}}
+	LastUpdatedAt:2017-10-27T09:58:30-07:00
+	FailureSource:10.89.195.244
+	Description:Improper Removal
+	Severity:CRITICAL
+
+
+	AlarmID: 538036599
+	AcknowledgmentStatus:True
+	TimeStamp:2017-10-27T09:58:30-07:00
+	Notes:{u'annotation': {u'noteText': u'Alarm acknowledged ', u'creationTimestamp': u'2017-11-01T09:01:34.171-07:00', u'creatorId': u'root'}}
+	LastUpdatedAt:2017-10-27T09:58:30-07:00
+	FailureSource:10.89.195.244
+	Description:Improper Removal
+	Severity:CRITICAL
+
+
+
+
+Device 10.89.204.67
+	AlarmID: 511080183
+	AcknowledgmentStatus:False
+	TimeStamp:2017-10-24T22:01:18.145-07:00
+	LastUpdatedAt:2017-11-03T22:01:15.197-07:00
+	FailureSource:10.89.204.67
+	Description:Collection Failure for '10.89.204.67'
+	Severity:CRITICAL
+
+
+	AlarmID: 511079764
+	AcknowledgmentStatus:False
+	TimeStamp:2017-10-24T09:02:21.622-07:00
+	LastUpdatedAt:2017-10-24T09:02:21.622-07:00
+	FailureSource:10.89.204.67
+	Description:Loss Of Signal
+	Severity:CRITICAL
+
+
+	AlarmID: 511079768
+	AcknowledgmentStatus:False
+	TimeStamp:2017-10-24T09:02:39.342-07:00
+	LastUpdatedAt:2017-10-24T09:02:39.342-07:00
+	FailureSource:10.89.204.67
+	Description:Ethernet OSC Termination Failure
+	Severity:MINOR
+
+
+	AlarmID: 511079797
+	AcknowledgmentStatus:False
+	TimeStamp:2017-10-24T09:07:20.783-07:00
+	LastUpdatedAt:2017-10-24T09:07:20.783-07:00
+	FailureSource:10.89.204.67
+	Description:Signal Loss on Data Interface
+	Severity:MAJOR
+
+
+	AlarmID: 511079649
+	AcknowledgmentStatus:False
+	TimeStamp:2017-10-23T10:34:03.117-07:00
+	LastUpdatedAt:2017-10-23T10:34:03.117-07:00
+	FailureSource:10.89.204.67
+	Description:Loss Of Signal
+	Severity:CRITICAL
+
+
+	AlarmID: 511080125
+	AcknowledgmentStatus:False
+	TimeStamp:2017-10-24T13:24:32.298-07:00
+	LastUpdatedAt:2017-11-06T22:36:34.177-08:00
+	FailureSource:10.89.204.67
+	Description:TL1 Session for address '10.89.204.67' has failed
+	Severity:CRITICAL
+
+
+	AlarmID: 511080132
+	AcknowledgmentStatus:False
+	TimeStamp:2017-10-24T13:28:14.568-07:00
+	LastUpdatedAt:2017-10-24T13:28:14.568-07:00
+	FailureSource:10.89.204.67
+	Description:Device 'RJO_AC' is unreachable.
+	Severity:CRITICAL
+
+
+	AlarmID: 511079831
+	AcknowledgmentStatus:False
+	TimeStamp:2017-10-24T09:14:39.487-07:00
+	LastUpdatedAt:2017-10-24T09:14:39.487-07:00
+	FailureSource:10.89.204.67
+	Description:Signal Loss on Data Interface
+	Severity:MAJOR
+
+
+	AlarmID: 511079830
+	AcknowledgmentStatus:False
+	TimeStamp:2017-10-24T09:14:39.479-07:00
+	LastUpdatedAt:2017-10-24T09:14:39.479-07:00
+	FailureSource:10.89.204.67
+	Description:Ethernet OSC Termination Failure
+	Severity:MINOR
+
+
+
+
+Device 10.89.204.238
+	AlarmID: 625226634
+	AcknowledgmentStatus:False
+	TimeStamp:2017-10-30T12:24:32.112-07:00
+	LastUpdatedAt:2017-10-30T12:24:32.112-07:00
+	FailureSource:10.89.204.238
+	Description:Equipment High Tx power
+	Severity:MINOR
+
+
+	AlarmID: 538037318
+	AcknowledgmentStatus:False
+	TimeStamp:2017-10-30T11:21:30.922-07:00
+	LastUpdatedAt:2017-10-30T11:21:30.922-07:00
+	FailureSource:10.89.204.238
+	Description:Provisioning Mismatch
+	Severity:MINOR
+
+
+
+
+Device 10.89.204.239
+	AlarmID: 656225991
+	AcknowledgmentStatus:False
+	TimeStamp:2017-11-06T13:01:12.464-08:00
+	LastUpdatedAt:2017-11-06T13:01:12.464-08:00
+	FailureSource:10.89.204.239
+	Description:Equipment High Tx power
+	Severity:MINOR
+
+
+	AlarmID: 656225989
+	AcknowledgmentStatus:False
+	TimeStamp:2017-11-06T13:01:12.452-08:00
+	LastUpdatedAt:2017-11-06T13:01:12.452-08:00
+	FailureSource:10.89.204.239
+	Description:Provisioning Mismatch
+	Severity:MINOR
+
+
+
+
+Device 10.89.204.89
+	AlarmID: 488716123
+	AcknowledgmentStatus:False
+	TimeStamp:2017-10-20T22:01:18.204-07:00
+	LastUpdatedAt:2017-11-03T22:01:18.911-07:00
+	FailureSource:10.89.204.89
+	Description:Collection Failure for '10.89.204.89'
+	Severity:CRITICAL
+
+
+	AlarmID: 488715553
+	AcknowledgmentStatus:False
+	TimeStamp:2017-10-20T09:04:54.290-07:00
+	LastUpdatedAt:2017-10-20T09:04:54.290-07:00
+	FailureSource:10.89.204.89
+	Description:Signal Loss on Data Interface
+	Severity:MAJOR
+
+
+	AlarmID: 488715554
+	AcknowledgmentStatus:False
+	TimeStamp:2017-10-20T09:04:55.467-07:00
+	LastUpdatedAt:2017-10-20T09:04:55.467-07:00
+	FailureSource:10.89.204.89
+	Description:Loss Of Signal
+	Severity:CRITICAL
+
+
+	AlarmID: 488715560
+	AcknowledgmentStatus:False
+	TimeStamp:2017-10-20T09:05:12.017-07:00
+	LastUpdatedAt:2017-10-20T09:05:12.017-07:00
+	FailureSource:10.89.204.89
+	Description:Ethernet OSC Termination Failure
+	Severity:MINOR
+
+
+	AlarmID: 488715403
+	AcknowledgmentStatus:False
+	TimeStamp:2017-10-20T07:04:52.463-07:00
+	LastUpdatedAt:2017-10-20T07:04:52.463-07:00
+	FailureSource:10.89.204.89
+	Description:Loss Of Signal
+	Severity:CRITICAL
+
+
+	AlarmID: 488715581
+	AcknowledgmentStatus:False
+	TimeStamp:2017-10-20T09:34:36.675-07:00
+	LastUpdatedAt:2017-11-06T22:36:34.079-08:00
+	FailureSource:10.89.204.89
+	Description:TL1 Session for address '10.89.204.89' has failed
+	Severity:CRITICAL
+
+
+	AlarmID: 488715401
+	AcknowledgmentStatus:False
+	TimeStamp:2017-10-20T07:04:48.463-07:00
+	LastUpdatedAt:2017-10-20T07:04:48.463-07:00
+	FailureSource:10.89.204.89
+	Description:Signal Loss on Data Interface
+	Severity:MAJOR
+
+
+	AlarmID: 488715406
+	AcknowledgmentStatus:False
+	TimeStamp:2017-10-20T07:05:06.427-07:00
+	LastUpdatedAt:2017-10-20T07:05:06.427-07:00
+	FailureSource:10.89.204.89
+	Description:Ethernet OSC Termination Failure
+	Severity:MINOR
+
+
+	AlarmID: 488715584
+	AcknowledgmentStatus:False
+	TimeStamp:2017-10-20T09:38:35.089-07:00
+	LastUpdatedAt:2017-10-20T09:38:35.089-07:00
+	FailureSource:10.89.204.89
+	Description:Device 'VRD_SC' is unreachable.
+	Severity:CRITICAL
+
+
+
+
+Device 172.23.193.130
 	AlarmID: 538036617
+	AcknowledgmentStatus:False
 	TimeStamp:2017-10-27T12:02:37.021-07:00
-	Severity:CRITICAL
+	LastUpdatedAt:2017-10-27T12:02:37.021-07:00
+	FailureSource:172.23.193.130
 	Description:Device:172.23.193.130, Sensor power Rx 0/2/1/1 value 10 has exceeded the threshold 0.
-
-
-	AlarmID: 538036605
-	TimeStamp:2017-10-27T12:02:16.264-07:00
-	Severity:MINOR
-	Description:Process 1, Nbr 192.168.200.1 on GigabitEthernet0/2/1/0 in area 200 from FULL to DOWN, Neighbor Down: interface down or detached, vrf default vrfid 0x60000000 
-
-
-
-	AlarmID: 447005764
-	TimeStamp:2017-10-26T18:47:06.269-07:00
-	Severity:MINOR
-	Description:Device '172.23.193.130'. Authentication failed for request from 'Unknown'.
-
-
-	AlarmID: 538036613
-	TimeStamp:2017-10-27T12:02:20.259-07:00
 	Severity:CRITICAL
-	Description:Port 'GigabitEthernet0/2/1/2' (Description: 'Not available') is down on device '172.23.193.130'.:
-
-
-	AlarmID: 538036612
-	TimeStamp:2017-10-27T12:02:20.007-07:00
-	Severity:CRITICAL
-	Description:Port 'GigabitEthernet0/2/1/0' (Description: 'Not available') is down on device '172.23.193.130'.:
-
-
-	AlarmID: 447006405
-	TimeStamp:2017-10-19T08:28:46.568-07:00
-	Severity:MINOR
-	Description:E-LMI operational status on GigabitEthernet0/2/1/2 has changed to DOWN 
-
-
-
-	AlarmID: 538036614
-	TimeStamp:2017-10-27T12:02:22.275-07:00
-	Severity:CRITICAL
-	Description:Port 'GigabitEthernet0/2/1/1' (Description: 'Not available') is down on device '172.23.193.130'.:
-
-
-	AlarmID: 538036615
-	TimeStamp:2017-10-27T12:02:22.527-07:00
-	Severity:MAJOR
-	Description:Device 'san-asr9006-a' MPLS LDP Session is 'nonexistent' between Peer 'san-asr920-f.cisco.com (192.168.200.6)' and Local 'san-asr9006-a (192.168.200.7)'
-
-
-	AlarmID: 538036618
-	TimeStamp:2017-10-27T12:02:37.273-07:00
-	Severity:CRITICAL
-	Description:Device:172.23.193.130, Sensor power Rx 0/2/1/2 value 9 has exceeded the threshold 0.
 
 
 	AlarmID: 538036616
+	AcknowledgmentStatus:False
 	TimeStamp:2017-10-27T12:02:36.769-07:00
-	Severity:CRITICAL
+	LastUpdatedAt:2017-10-27T12:02:36.769-07:00
+	FailureSource:172.23.193.130
 	Description:Device:172.23.193.130, Sensor power Rx 0/2/1/0 value 7 has exceeded the threshold 0.
+	Severity:CRITICAL
 
 
-	AlarmID: 538036623
-	TimeStamp:2017-10-27T12:03:45.818-07:00
+	AlarmID: 447005764
+	AcknowledgmentStatus:False
+	TimeStamp:2017-10-11T19:32:05.583-07:00
+	LastUpdatedAt:2017-10-26T18:47:06.269-07:00
+	FailureSource:172.23.193.130
+	Description:Device '172.23.193.130'. Authentication failed for request from 'Unknown'.
+	Severity:MINOR
+
+
+	AlarmID: 447006405
+	AcknowledgmentStatus:False
+	TimeStamp:2017-10-19T08:28:46.568-07:00
+	LastUpdatedAt:2017-10-31T09:36:39.360-07:00
+	FailureSource:172.23.193.130
+	Description:E-LMI operational status on GigabitEthernet0/2/1/2 has changed to DOWN 
+
+	Severity:MINOR
+
+
+	AlarmID: 538036618
+	AcknowledgmentStatus:False
+	TimeStamp:2017-10-27T12:02:37.273-07:00
+	LastUpdatedAt:2017-10-27T12:02:37.273-07:00
+	FailureSource:172.23.193.130
+	Description:Device:172.23.193.130, Sensor power Rx 0/2/1/2 value 9 has exceeded the threshold 0.
+	Severity:CRITICAL
+
+
+	AlarmID: 646127061
+	AcknowledgmentStatus:False
+	TimeStamp:2017-11-04T06:13:14.630-07:00
+	LastUpdatedAt:2017-11-04T06:13:14.630-07:00
+	FailureSource:172.23.193.130
+	Description:Device:172.23.193.130, Sensor power Rx 0/2/1/3 value 10 has exceeded the threshold 0.
+	Severity:CRITICAL
+
+
+
+
+Device 172.27.153.148
+	AlarmID: 538036644
+	AcknowledgmentStatus:False
+	TimeStamp:2017-10-27T16:51:42.108-07:00
+	LastUpdatedAt:2017-10-27T16:51:42.108-07:00
+	FailureSource:172.27.153.148
+	Description:Device 'ASR903' is unreachable.
+	Severity:CRITICAL
+
+
+
+
+Device 10.89.204.45
+	AlarmID: 538037204
+	AcknowledgmentStatus:False
+	TimeStamp:2017-10-30T10:43:42.844-07:00
+	LastUpdatedAt:2017-10-30T10:43:42.844-07:00
+	FailureSource:10.89.204.45
+	Description:Provisioning Mismatch
+	Severity:MINOR
+
+
+	AlarmID: 538037207
+	AcknowledgmentStatus:False
+	TimeStamp:2017-10-30T10:43:42.868-07:00
+	LastUpdatedAt:2017-10-30T10:43:42.868-07:00
+	FailureSource:10.89.204.45
+	Description:Equipment High Tx power
+	Severity:MINOR
+
+
+
+
+Device 172.23.193.23
+	AlarmID: 447006395
+	AcknowledgmentStatus:False
+	TimeStamp:2017-10-19T07:40:24.715-07:00
+	LastUpdatedAt:2017-10-19T07:40:24.715-07:00
+	FailureSource:172.23.193.23
+	Description:Remote MEP mpid 4 evc EVPL_1564 MA name EVPL_1564 in domain EVC changed state to down with event code TimeOut. 
+	Severity:MINOR
+
+
+	AlarmID: 447006396
+	AcknowledgmentStatus:False
+	TimeStamp:2017-10-19T07:40:25.719-07:00
+	LastUpdatedAt:2017-10-19T07:40:25.719-07:00
+	FailureSource:172.23.193.23
+	Description:local mep with mpid 2 level 4 XCONN if_number 9 service instance 1 dir U Interface Gi0/0/2 enters AIS defect condition
 	Severity:MAJOR
-	Description:Device 'san-asr9006-a' MPLS LDP Session is 'nonexistent' between Peer 'san-asr920-a.cisco.com (192.168.200.1)' and Local 'san-asr9006-a (192.168.200.7)'
+
+
+	AlarmID: 447006397
+	AcknowledgmentStatus:False
+	TimeStamp:2017-10-19T07:48:11.107-07:00
+	LastUpdatedAt:2017-10-19T07:48:11.107-07:00
+	FailureSource:172.23.193.23
+	Description:Remote MEP mpid 1 evc EVPL_1564 MA name EVPL_1564 in domain EVC changed state to down with event code TimeOut. 
+	Severity:MINOR
+
+
+
+
+Device 10.89.206.121
+	AlarmID: 428525966
+	AcknowledgmentStatus:False
+	TimeStamp:2017-10-10T07:43:34.255-07:00
+	LastUpdatedAt:2017-10-11T11:52:24.840-07:00
+	FailureSource:10.89.206.121
+	Description:Device:10.89.206.121, Sensor subslot 0/5 transceiver 5 Rx Power Sensor value -310 has exceeded the threshold -370.
+	Severity:CRITICAL
+
+
+	AlarmID: 428525964
+	AcknowledgmentStatus:False
+	TimeStamp:2017-10-10T07:43:33.246-07:00
+	LastUpdatedAt:2017-10-10T07:43:33.499-07:00
+	FailureSource:10.89.206.121
+	Description:Device:10.89.206.121, Sensor subslot 0/5 transceiver 1 Rx Power Sensor value -310 has exceeded the threshold -370.
+	Severity:CRITICAL
+
+
+	AlarmID: 428525976
+	AcknowledgmentStatus:False
+	TimeStamp:2017-10-10T07:59:45.522-07:00
+	LastUpdatedAt:2017-10-10T07:59:45.522-07:00
+	FailureSource:10.89.206.121
+	Description:Device 4206-TME.vz.com. FRU:USB Flash:usb0 removed
+	Severity:WARNING
+
+
+	AlarmID: 447005593
+	AcknowledgmentStatus:False
+	TimeStamp:2017-10-11T10:03:11.940-07:00
+	LastUpdatedAt:2017-10-11T10:03:12.191-07:00
+	FailureSource:10.89.206.121
+	Description:Device:10.89.206.121, Sensor subslot 0/0 transceiver 4 Rx Power Sensor value -240 has exceeded the threshold -315.
+	Severity:CRITICAL
+
+
+	AlarmID: 428525965
+	AcknowledgmentStatus:False
+	TimeStamp:2017-10-10T07:43:33.754-07:00
+	LastUpdatedAt:2017-10-10T07:43:34.015-07:00
+	FailureSource:10.89.206.121
+	Description:Device:10.89.206.121, Sensor subslot 0/5 transceiver 3 Rx Power Sensor value -310 has exceeded the threshold -370.
+	Severity:CRITICAL
+
+
+	AlarmID: 447006426
+	AcknowledgmentStatus:False
+	TimeStamp:2017-10-19T09:09:49.187-07:00
+	LastUpdatedAt:2017-10-20T08:52:05.056-07:00
+	FailureSource:10.89.206.121
+	Description:Port 'SONET 0/5/0.9/5/1' (Description: 'Not available') is down on device '10.89.206.121'.:
+	Severity:CRITICAL
+
+
+	AlarmID: 447006427
+	AcknowledgmentStatus:False
+	TimeStamp:2017-10-19T09:09:49.936-07:00
+	LastUpdatedAt:2017-10-20T08:52:05.805-07:00
+	FailureSource:10.89.206.121
+	Description:Controller SONET 0/5/0 OC12.STS1/VT1.5/T1 9/5/1, changed state to administratively down
+	Severity:CRITICAL
+
+
+	AlarmID: 538037300
+	AcknowledgmentStatus:False
+	TimeStamp:2017-10-30T11:02:21.385-07:00
+	LastUpdatedAt:2017-10-30T11:49:17.821-07:00
+	FailureSource:10.89.206.121
+	Description:Device:10.89.206.121, Sensor subslot 0/0 transceiver 5 Rx Power Sensor value -240 has exceeded the threshold -300.
+	Severity:CRITICAL
+
+
+
+
+Device 10.89.206.122
+	AlarmID: 447005599
+	AcknowledgmentStatus:False
+	TimeStamp:2017-10-11T10:12:22.774-07:00
+	LastUpdatedAt:2017-10-11T10:12:22.774-07:00
+	FailureSource:10.89.206.122
+	Description:ceAlarmAsserted on Device: 4216-TME-1.cisco.com generated by entity 1919 
+	Severity:MAJOR
+
+
+	AlarmID: 447005598
+	AcknowledgmentStatus:False
+	TimeStamp:2017-10-11T10:12:22.523-07:00
+	LastUpdatedAt:2017-10-11T10:12:22.523-07:00
+	FailureSource:10.89.206.122
+	Description:ceAlarmAsserted on Device: 4216-TME-1.cisco.com generated by entity 1905 
+	Severity:MAJOR
+
+
+	AlarmID: 447005574
+	AcknowledgmentStatus:False
+	TimeStamp:2017-10-11T09:41:06.616-07:00
+	LastUpdatedAt:2017-10-11T11:44:38.841-07:00
+	FailureSource:10.89.206.122
+	Description:Device:10.89.206.122, Sensor subslot 0/8 transceiver 7 Rx Power Sensor value -310 has exceeded the threshold -330.
+	Severity:CRITICAL
+
+
+	AlarmID: 447005677
+	AcknowledgmentStatus:False
+	TimeStamp:2017-10-11T11:37:01.190-07:00
+	LastUpdatedAt:2017-10-11T11:44:07.024-07:00
+	FailureSource:10.89.206.122
+	Description:ceAlarmAsserted on Device: 4216-TME-1.cisco.com generated by entity 2391 
+	Severity:MAJOR
+
+
+	AlarmID: 447005592
+	AcknowledgmentStatus:False
+	TimeStamp:2017-10-11T09:55:57.054-07:00
+	LastUpdatedAt:2017-10-11T11:37:00.939-07:00
+	FailureSource:10.89.206.122
+	Description:Device:10.89.206.122, Sensor subslot 0/8 transceiver 0 Rx Power Sensor value -310 has exceeded the threshold -400.
+	Severity:CRITICAL
+
+
+	AlarmID: 447005591
+	AcknowledgmentStatus:False
+	TimeStamp:2017-10-11T09:55:56.215-07:00
+	LastUpdatedAt:2017-10-11T11:36:59.883-07:00
+	FailureSource:10.89.206.122
+	Description:Device 4216-TME-1.cisco.com. FRU:subslot 0/8 voltage Sensor 15:subslot 0/8 voltage Sensor 15 removed
+	Severity:WARNING
+
+
+	AlarmID: 447005590
+	AcknowledgmentStatus:False
+	TimeStamp:2017-10-11T09:54:57.076-07:00
+	LastUpdatedAt:2017-10-11T11:52:44.047-07:00
+	FailureSource:10.89.206.122
+	Description:Device:10.89.206.122, Sensor subslot 0/8 transceiver 4 Rx Power Sensor value -310 has exceeded the threshold -400.
+	Severity:CRITICAL
+
+
+	AlarmID: 447005603
+	AcknowledgmentStatus:False
+	TimeStamp:2017-10-11T10:12:23.783-07:00
+	LastUpdatedAt:2017-10-11T10:12:23.783-07:00
+	FailureSource:10.89.206.122
+	Description:ceAlarmAsserted on Device: 4216-TME-1.cisco.com generated by entity 1975 
+	Severity:MAJOR
+
+
+	AlarmID: 447005602
+	AcknowledgmentStatus:False
+	TimeStamp:2017-10-11T10:12:23.531-07:00
+	LastUpdatedAt:2017-10-11T10:12:23.531-07:00
+	FailureSource:10.89.206.122
+	Description:ceAlarmAsserted on Device: 4216-TME-1.cisco.com generated by entity 1961 
+	Severity:MAJOR
+
+
+	AlarmID: 447005600
+	AcknowledgmentStatus:False
+	TimeStamp:2017-10-11T10:12:23.026-07:00
+	LastUpdatedAt:2017-10-11T10:12:23.026-07:00
+	FailureSource:10.89.206.122
+	Description:ceAlarmAsserted on Device: 4216-TME-1.cisco.com generated by entity 1933 
+	Severity:MAJOR
+
+
+	AlarmID: 625226657
+	AcknowledgmentStatus:False
+	TimeStamp:2017-10-30T12:42:10.118-07:00
+	LastUpdatedAt:2017-10-30T12:42:10.118-07:00
+	FailureSource:10.89.206.122
+	Description:ceAlarmAsserted on Device: 4216-TME-1.cisco.com generated by entity 100 
+	Severity:MAJOR
+
+
+	AlarmID: 447005613
+	AcknowledgmentStatus:False
+	TimeStamp:2017-10-11T10:13:37.595-07:00
+	LastUpdatedAt:2017-10-11T10:13:37.595-07:00
+	FailureSource:10.89.206.122
+	Description:Device:10.89.206.122, Sensor subslot 0/6 transceiver 8 Rx Power Sensor value -184 has exceeded the threshold -400.
+	Severity:CRITICAL
+
+
+	AlarmID: 625226660
+	AcknowledgmentStatus:False
+	TimeStamp:2017-10-30T12:42:24.847-07:00
+	LastUpdatedAt:2017-10-30T12:42:43.868-07:00
+	FailureSource:10.89.206.122
+	Description:ceAlarmAsserted on Device: 4216-TME-1.cisco.com generated by entity 200 
+	Severity:MAJOR
+
+
+	AlarmID: 538037307
+	AcknowledgmentStatus:False
+	TimeStamp:2017-10-30T11:02:52.929-07:00
+	LastUpdatedAt:2017-10-30T11:23:07.893-07:00
+	FailureSource:10.89.206.122
+	Description:Device:10.89.206.122, Sensor subslot 0/6 transceiver 0 Rx Power Sensor value -240 has exceeded the threshold -322.
+	Severity:CRITICAL
+
+
+	AlarmID: 428525971
+	AcknowledgmentStatus:False
+	TimeStamp:2017-10-10T07:45:10.181-07:00
+	LastUpdatedAt:2017-10-10T07:45:10.436-07:00
+	FailureSource:10.89.206.122
+	Description:Device:10.89.206.122, Sensor subslot 0/7 transceiver 1 Bias Current Sensor value 8000 has exceeded the threshold 5840.
+	Severity:CRITICAL
+
+
+	AlarmID: 428525956
+	AcknowledgmentStatus:False
+	TimeStamp:2017-10-10T07:42:12.114-07:00
+	LastUpdatedAt:2017-10-10T07:42:12.114-07:00
+	FailureSource:10.89.206.122
+	Description:Device 4216-TME-1.cisco.com. FRU:Dual-Rate OC3/12 IR-1:subslot 0/8 transceiver 0 removed
+	Severity:WARNING
+
+
+	AlarmID: 428525973
+	AcknowledgmentStatus:False
+	TimeStamp:2017-10-10T07:45:15.082-07:00
+	LastUpdatedAt:2017-10-11T10:10:56.133-07:00
+	FailureSource:10.89.206.122
+	Description:ceAlarmAsserted on Device: 4216-TME-1.cisco.com generated by entity 2143 
+	Severity:MAJOR
+
+
+	AlarmID: 428525972
+	AcknowledgmentStatus:False
+	TimeStamp:2017-10-10T07:45:10.688-07:00
+	LastUpdatedAt:2017-10-10T07:45:10.938-07:00
+	FailureSource:10.89.206.122
+	Description:Device:10.89.206.122, Sensor subslot 0/7 transceiver 1 Rx Power Sensor value -177 has exceeded the threshold -217.
+	Severity:CRITICAL
+
+
+	AlarmID: 428525975
+	AcknowledgmentStatus:False
+	TimeStamp:2017-10-10T07:56:20.528-07:00
+	LastUpdatedAt:2017-10-10T07:56:20.528-07:00
+	FailureSource:10.89.206.122
+	Description:Device 4216-TME-1.cisco.com. FRU:USB Flash:usb0 removed
+	Severity:WARNING
+
+
+	AlarmID: 428525974
+	AcknowledgmentStatus:False
+	TimeStamp:2017-10-10T07:46:11.028-07:00
+	LastUpdatedAt:2017-10-11T10:10:57.645-07:00
+	FailureSource:10.89.206.122
+	Description:Device:10.89.206.122, Sensor subslot 0/7 transceiver 0 Rx Power Sensor value -177 has exceeded the threshold -208.
+	Severity:CRITICAL
+
+
+	AlarmID: 447005690
+	AcknowledgmentStatus:False
+	TimeStamp:2017-10-11T11:44:09.040-07:00
+	LastUpdatedAt:2017-10-11T11:44:09.040-07:00
+	FailureSource:10.89.206.122
+	Description:ceAlarmAsserted on Device: 4216-TME-1.cisco.com generated by entity 2503 
+	Severity:MAJOR
+
+
+	AlarmID: 428525958
+	AcknowledgmentStatus:False
+	TimeStamp:2017-10-10T07:42:15.102-07:00
+	LastUpdatedAt:2017-10-10T07:42:15.102-07:00
+	FailureSource:10.89.206.122
+	Description:Device 4216-TME-1.cisco.com. FRU:Dual-Rate OC3/12 IR-1:subslot 0/8 transceiver 1 removed
+	Severity:WARNING
+
+
+	AlarmID: 447005676
+	AcknowledgmentStatus:False
+	TimeStamp:2017-10-11T11:37:00.939-07:00
+	LastUpdatedAt:2017-10-11T11:37:00.939-07:00
+	FailureSource:10.89.206.122
+	Description:Device 4216-TME-1.cisco.com. FRU:OC48 LR-1/STM16 L-16-1:subslot 0/8 transceiver 0 removed
+	Severity:WARNING
+
+
+	AlarmID: 447005611
+	AcknowledgmentStatus:False
+	TimeStamp:2017-10-11T10:13:16.564-07:00
+	LastUpdatedAt:2017-10-11T10:13:16.564-07:00
+	FailureSource:10.89.206.122
+	Description:ceAlarmAsserted on Device: 4216-TME-1.cisco.com generated by entity 1949 
+	Severity:MAJOR
+
+
+	AlarmID: 447005612
+	AcknowledgmentStatus:False
+	TimeStamp:2017-10-11T10:13:17.067-07:00
+	LastUpdatedAt:2017-10-11T10:13:17.067-07:00
+	FailureSource:10.89.206.122
+	Description:ceAlarmAsserted on Device: 4216-TME-1.cisco.com generated by entity 2005 
+	Severity:MAJOR
+
+
+	AlarmID: 447005604
+	AcknowledgmentStatus:False
+	TimeStamp:2017-10-11T10:12:24.035-07:00
+	LastUpdatedAt:2017-10-11T10:12:24.035-07:00
+	FailureSource:10.89.206.122
+	Description:ceAlarmAsserted on Device: 4216-TME-1.cisco.com generated by entity 1989 
+	Severity:MAJOR
+
+
+	AlarmID: 447005588
+	AcknowledgmentStatus:False
+	TimeStamp:2017-10-11T09:54:56.070-07:00
+	LastUpdatedAt:2017-10-11T11:44:36.823-07:00
+	FailureSource:10.89.206.122
+	Description:Device:10.89.206.122, Sensor subslot 0/8 transceiver 2 Rx Power Sensor value -310 has exceeded the threshold -400.
+	Severity:CRITICAL
+
+
+	AlarmID: 447005589
+	AcknowledgmentStatus:False
+	TimeStamp:2017-10-11T09:54:56.573-07:00
+	LastUpdatedAt:2017-10-11T11:44:37.327-07:00
+	FailureSource:10.89.206.122
+	Description:Device:10.89.206.122, Sensor subslot 0/8 transceiver 3 Rx Power Sensor value -310 has exceeded the threshold -400.
+	Severity:CRITICAL
+
+
+	AlarmID: 447005618
+	AcknowledgmentStatus:False
+	TimeStamp:2017-10-11T10:30:19.061-07:00
+	LastUpdatedAt:2017-10-30T12:42:12.563-07:00
+	FailureSource:10.89.206.122
+	Description:Device 4216-TME-1.cisco.com. FRU:NCS 4216 Route Switch Processor , 400G, XL Scale:module R1 removed
+	Severity:WARNING
+
+
+	AlarmID: 447005674
+	AcknowledgmentStatus:False
+	TimeStamp:2017-10-11T11:35:59.718-07:00
+	LastUpdatedAt:2017-10-11T11:35:59.970-07:00
+	FailureSource:10.89.206.122
+	Description:Device:10.89.206.122, Sensor subslot 0/8 transceiver 1 Rx Power Sensor value -310 has exceeded the threshold -400.
+	Severity:CRITICAL
+
+
+	AlarmID: 625226656
+	AcknowledgmentStatus:False
+	TimeStamp:2017-10-30T12:42:09.362-07:00
+	LastUpdatedAt:2017-10-30T12:42:43.615-07:00
+	FailureSource:10.89.206.122
+	Description:Device '10.89.206.122'. CEFC module 'module R1' state changed to 'boot'. sysUpTime='19 days 2 hrs 32 mins 46 secs'.
+	Severity:MINOR
+
+
+	AlarmID: 428525962
+	AcknowledgmentStatus:False
+	TimeStamp:2017-10-10T07:42:20.107-07:00
+	LastUpdatedAt:2017-10-10T07:42:20.107-07:00
+	FailureSource:10.89.206.122
+	Description:Device 4216-TME-1.cisco.com. FRU:Dual-Rate OC3/12 IR-1:subslot 0/8 transceiver 3 removed
+	Severity:WARNING
+
+
+	AlarmID: 428525960
+	AcknowledgmentStatus:False
+	TimeStamp:2017-10-10T07:42:18.106-07:00
+	LastUpdatedAt:2017-10-10T07:42:18.106-07:00
+	FailureSource:10.89.206.122
+	Description:Device 4216-TME-1.cisco.com. FRU:Dual-Rate OC3/12 IR-1:subslot 0/8 transceiver 2 removed
+	Severity:WARNING
+
+
+	AlarmID: 447005681
+	AcknowledgmentStatus:False
+	TimeStamp:2017-10-11T11:41:05.608-07:00
+	LastUpdatedAt:2017-10-11T11:41:05.608-07:00
+	FailureSource:10.89.206.122
+	Description:ceAlarmAsserted on Device: 4216-TME-1.cisco.com generated by entity 2300 
+	Severity:MAJOR
+
+
+	AlarmID: 447005573
+	AcknowledgmentStatus:False
+	TimeStamp:2017-10-11T09:41:06.111-07:00
+	LastUpdatedAt:2017-10-11T11:51:43.505-07:00
+	FailureSource:10.89.206.122
+	Description:Device:10.89.206.122, Sensor subslot 0/8 transceiver 5 Rx Power Sensor value -322 has exceeded the threshold -400.
+	Severity:CRITICAL
+
+
+	AlarmID: 447005688
+	AcknowledgmentStatus:False
+	TimeStamp:2017-10-11T11:44:08.536-07:00
+	LastUpdatedAt:2017-10-11T11:44:08.536-07:00
+	FailureSource:10.89.206.122
+	Description:ceAlarmAsserted on Device: 4216-TME-1.cisco.com generated by entity 2475 
+	Severity:MAJOR
+
+
+
+
+Device 10.89.204.25
+	AlarmID: 488716122
+	AcknowledgmentStatus:False
+	TimeStamp:2017-10-20T22:01:17.972-07:00
+	LastUpdatedAt:2017-11-03T22:01:15.717-07:00
+	FailureSource:10.89.204.25
+	Description:Collection Failure for '10.89.204.25'
+	Severity:CRITICAL
+
+
+	AlarmID: 488715320
+	AcknowledgmentStatus:False
+	TimeStamp:2017-10-20T05:59:55.976-07:00
+	LastUpdatedAt:2017-10-20T05:59:55.976-07:00
+	FailureSource:10.89.204.25
+	Description:Ethernet OSC Termination Failure
+	Severity:MINOR
+
+
+	AlarmID: 488715429
+	AcknowledgmentStatus:False
+	TimeStamp:2017-10-20T07:15:03.625-07:00
+	LastUpdatedAt:2017-11-06T22:36:34.187-08:00
+	FailureSource:10.89.204.25
+	Description:TL1 Session for address '10.89.204.25' has failed
+	Severity:CRITICAL
+
+
+	AlarmID: 488715433
+	AcknowledgmentStatus:False
+	TimeStamp:2017-10-20T07:15:18.888-07:00
+	LastUpdatedAt:2017-10-20T07:15:18.888-07:00
+	FailureSource:10.89.204.25
+	Description:Device 'GRM_BR' is unreachable.
+	Severity:CRITICAL
+
+
+	AlarmID: 488715318
+	AcknowledgmentStatus:False
+	TimeStamp:2017-10-20T05:59:42.572-07:00
+	LastUpdatedAt:2017-10-20T05:59:42.572-07:00
+	FailureSource:10.89.204.25
+	Description:Signal Loss on Data Interface
+	Severity:MAJOR
+
+
+	AlarmID: 488715319
+	AcknowledgmentStatus:False
+	TimeStamp:2017-10-20T05:59:44.097-07:00
+	LastUpdatedAt:2017-10-20T05:59:44.097-07:00
+	FailureSource:10.89.204.25
+	Description:Loss Of Signal
+	Severity:CRITICAL
+
+
+
+
+Device 10.89.195.243
+	AlarmID: 625227082
+	AcknowledgmentStatus:False
+	TimeStamp:2017-11-01T12:31:46-07:00
+	LastUpdatedAt:2017-11-01T12:31:46-07:00
+	FailureSource:10.89.195.243
+	Description:TX-POWER-PROV-MISMATCH
+	Severity:MINOR
+
+
+	AlarmID: 538036581
+	AcknowledgmentStatus:True
+	TimeStamp:2017-10-27T09:53:27-07:00
+	Notes:{u'annotation': {u'noteText': u'Alarm acknowledged ', u'creationTimestamp': u'2017-11-01T09:01:32.925-07:00', u'creatorId': u'root'}}
+	LastUpdatedAt:2017-10-27T09:53:27-07:00
+	FailureSource:10.89.195.243
+	Description:Improper Removal
+	Severity:CRITICAL
+
+
+	AlarmID: 538036580
+	AcknowledgmentStatus:True
+	TimeStamp:2017-10-27T09:53:27-07:00
+	Notes:{u'annotation': {u'noteText': u'Alarm acknowledged ', u'creationTimestamp': u'2017-11-01T09:01:32.894-07:00', u'creatorId': u'root'}}
+	LastUpdatedAt:2017-10-27T09:53:27-07:00
+	FailureSource:10.89.195.243
+	Description:Improper Removal
+	Severity:CRITICAL
+
+
+	AlarmID: 538036582
+	AcknowledgmentStatus:True
+	TimeStamp:2017-10-27T09:53:27-07:00
+	Notes:{u'annotation': {u'noteText': u'Alarm acknowledged ', u'creationTimestamp': u'2017-11-01T09:01:33.228-07:00', u'creatorId': u'root'}}
+	LastUpdatedAt:2017-10-27T09:53:27-07:00
+	FailureSource:10.89.195.243
+	Description:Improper Removal
+	Severity:CRITICAL
+
+
+
+
+Device 10.89.206.89
+	AlarmID: 646127045
+	AcknowledgmentStatus:False
+	TimeStamp:2017-11-04T05:13:41.814-07:00
+	LastUpdatedAt:2017-11-04T05:13:41.814-07:00
+	FailureSource:10.89.206.89
+	Description:Device '10.89.206.89'. Authentication failed for request from '64.104.143.5'.
+	Severity:MINOR
+
+
+
+
+Device 172.23.193.143
+	AlarmID: 511079723
+	AcknowledgmentStatus:False
+	TimeStamp:2017-10-24T03:01:25.157-07:00
+	LastUpdatedAt:2017-10-24T03:01:25.157-07:00
+	FailureSource:172.23.193.143
+	Description:Device: sjc-ncs4206-b.cisco.com MPLS Tunnel with id: 0 is Administratively DOWN 
+	Severity:CRITICAL
+
+
+	AlarmID: 447005767
+	AcknowledgmentStatus:False
+	TimeStamp:2017-10-11T19:32:06.059-07:00
+	LastUpdatedAt:2017-10-26T18:47:06.494-07:00
+	FailureSource:172.23.193.143
+	Description:Device '172.23.193.143'. Authentication failed for request from '172.18.108.10'.
+	Severity:MINOR
+
+
+
+
+Device 172.23.193.142
+	AlarmID: 447005766
+	AcknowledgmentStatus:False
+	TimeStamp:2017-10-11T19:32:06.039-07:00
+	LastUpdatedAt:2017-10-26T18:47:06.473-07:00
+	FailureSource:172.23.193.142
+	Description:Device '172.23.193.142'. Authentication failed for request from '172.18.108.10'.
+	Severity:MINOR
+
+
+	AlarmID: 625226902
+	AcknowledgmentStatus:False
+	TimeStamp:2017-10-31T10:50:53.058-07:00
+	LastUpdatedAt:2017-10-31T10:50:53.058-07:00
+	FailureSource:172.23.193.142
+	Description:ceAlarmAsserted on Device: sjc-ncs4206-a.cisco.com generated by entity 393 
+	Severity:MAJOR
+
+
+	AlarmID: 625226900
+	AcknowledgmentStatus:False
+	TimeStamp:2017-10-31T10:50:50.790-07:00
+	LastUpdatedAt:2017-10-31T10:50:50.790-07:00
+	FailureSource:172.23.193.142
+	Description:Device 'sjc-ncs4206-a.cisco.com' MPLS LDP Session is 'nonexistent' between Peer 'sjc-asr9006-a.cisco.com (192.168.4.7)' and Local 'sjc-ncs4206-a.cisco.com (192.168.4.1)'
+	Severity:MAJOR
+
+
+	AlarmID: 625226907
+	AcknowledgmentStatus:False
+	TimeStamp:2017-10-31T10:50:54.317-07:00
+	LastUpdatedAt:2017-10-31T10:50:54.317-07:00
+	FailureSource:172.23.193.142
+	Description:Port 'GigabitEthernet0/0/0' (Description: 'Not available') is down on device '172.23.193.142'.:Lost Carrier
+	Severity:CRITICAL
+
+
+	AlarmID: 625226905
+	AcknowledgmentStatus:False
+	TimeStamp:2017-10-31T10:50:53.814-07:00
+	LastUpdatedAt:2017-10-31T10:50:53.814-07:00
+	FailureSource:172.23.193.142
+	Description:ospfIfStateChange on Device: sjc-ncs4206-a.cisco.com , ospf instance: 192.168.4.1 
+	Severity:MINOR
+
+
+	AlarmID: 625226904
+	AcknowledgmentStatus:False
+	TimeStamp:2017-10-31T10:50:53.256-07:00
+	LastUpdatedAt:2017-10-31T10:50:53.256-07:00
+	FailureSource:172.23.193.142
+	Description:Process 1, Nbr 192.168.4.7 on GigabitEthernet0/0/0 from FULL to DOWN, Neighbor Down: Interface down or detached
+	Severity:MAJOR
+
+
+	AlarmID: 625226898
+	AcknowledgmentStatus:False
+	TimeStamp:2017-10-31T10:50:50.610-07:00
+	LastUpdatedAt:2017-10-31T10:50:50.610-07:00
+	FailureSource:172.23.193.142
+	Description:LDP Neighbor 192.168.4.7:0 (1) is DOWN (Received error notification from peer: Holddown time expired)
+	Severity:MAJOR
+
+
+	AlarmID: 511079724
+	AcknowledgmentStatus:False
+	TimeStamp:2017-10-24T03:01:31.461-07:00
+	LastUpdatedAt:2017-10-24T03:01:31.461-07:00
+	FailureSource:172.23.193.142
+	Description:Device: sjc-ncs4206-a.cisco.com MPLS Tunnel with id: 0 is Administratively DOWN 
+	Severity:CRITICAL
+
+
+	AlarmID: 488715598
+	AcknowledgmentStatus:False
+	TimeStamp:2017-10-20T11:02:30.021-07:00
+	LastUpdatedAt:2017-10-31T10:51:20.742-07:00
+	FailureSource:172.23.193.142
+	Description:Device:172.23.193.142, Sensor subslot 0/0 transceiver 0 Rx Power Sensor value -210 has exceeded the threshold -400.
+	Severity:CRITICAL
+
+
+
+
+Device 172.23.193.140
+	AlarmID: 428525953
+	AcknowledgmentStatus:False
+	TimeStamp:2017-10-09T14:03:13.833-07:00
+	LastUpdatedAt:2017-11-05T23:27:24.108-08:00
+	FailureSource:172.23.193.140
+	Description:Interface 12 (SFP+_00_10GE) is down 
+
+	Severity:MINOR
+
+
+	AlarmID: 447005765
+	AcknowledgmentStatus:False
+	TimeStamp:2017-10-11T19:32:06.008-07:00
+	LastUpdatedAt:2017-10-26T18:47:06.440-07:00
+	FailureSource:172.23.193.140
+	Description:Device '172.23.193.140'. Authentication failed for request from 'Unknown'.
+	Severity:MINOR
+
+
+	AlarmID: 625226903
+	AcknowledgmentStatus:False
+	TimeStamp:2017-10-31T10:50:53.297-07:00
+	LastUpdatedAt:2017-10-31T10:50:53.297-07:00
+	FailureSource:172.23.193.140
+	Description:Device 'sjc-asr9006-a.cisco.com' MPLS LDP Session is 'nonexistent' between Peer 'sjc-ncs4206-a.cisco.com (192.168.4.1)' and Local 'sjc-asr9006-a.cisco.com (192.168.4.7)'
+	Severity:MAJOR
+
+
+	AlarmID: 447006180
+	AcknowledgmentStatus:False
+	TimeStamp:2017-10-17T06:26:09.289-07:00
+	LastUpdatedAt:2017-10-17T12:45:45.092-07:00
+	FailureSource:172.23.193.140
+	Description:Device:172.23.193.140, Sensor power Rx 0/1/0/1 value 51 has exceeded the threshold 0.
+	Severity:CRITICAL
+
+
+	AlarmID: 625226901
+	AcknowledgmentStatus:False
+	TimeStamp:2017-10-31T10:50:51.786-07:00
+	LastUpdatedAt:2017-10-31T10:50:51.786-07:00
+	FailureSource:172.23.193.140
+	Description:ospfIfStateChange on Device: sjc-asr9006-a.cisco.com , ospf instance: 192.168.4.7 
+	Severity:MINOR
+
+
+	AlarmID: 625226906
+	AcknowledgmentStatus:False
+	TimeStamp:2017-10-31T10:50:53.549-07:00
+	LastUpdatedAt:2017-10-31T10:50:53.549-07:00
+	FailureSource:172.23.193.140
+	Description:Port 'GigabitEthernet0/1/1/0' (Description: 'Not available') is down on device '172.23.193.140'.:
+	Severity:CRITICAL
+
+
+	AlarmID: 625226899
+	AcknowledgmentStatus:False
+	TimeStamp:2017-10-31T10:50:50.548-07:00
+	LastUpdatedAt:2017-10-31T10:50:50.548-07:00
+	FailureSource:172.23.193.140
+	Description:Process 1, Nbr 192.168.4.1 on GigabitEthernet0/1/1/0 in area 0 from FULL to DOWN, Neighbor Down: interface down or detached, vrf default vrfid 0x60000000 
+
+	Severity:MINOR
+
+
+	AlarmID: 646127060
+	AcknowledgmentStatus:False
+	TimeStamp:2017-11-04T06:13:07.444-07:00
+	LastUpdatedAt:2017-11-04T06:13:07.444-07:00
+	FailureSource:172.23.193.140
+	Description:Device:172.23.193.140, Sensor power Rx 0/1/0/2 value 51 has exceeded the threshold 0.
+	Severity:CRITICAL
+
+
+	AlarmID: 447006421
+	AcknowledgmentStatus:False
+	TimeStamp:2017-10-19T08:37:48.434-07:00
+	LastUpdatedAt:2017-10-19T08:37:48.434-07:00
+	FailureSource:172.23.193.140
+	Description:E-LMI operational status on GigabitEthernet0/1/1/10 has changed to DOWN 
+
+	Severity:MINOR
+
+
+
+
+Device 10.89.204.202
+	AlarmID: 488715600
+	AcknowledgmentStatus:False
+	TimeStamp:2017-10-20T12:11:34-07:00
+	LastUpdatedAt:2017-10-20T12:11:34-07:00
+	FailureSource:10.89.204.202
+	Description:Loss of Signal - Payload
+	Severity:CRITICAL
+
+
+	AlarmID: 625226763
+	AcknowledgmentStatus:False
+	TimeStamp:2017-10-31T05:46:11-07:00
+	LastUpdatedAt:2017-10-31T05:46:11-07:00
+	FailureSource:10.89.204.202
+	Description:Loss of Signal on the Data Interface
+	Severity:MAJOR
+
+
+	AlarmID: 625226759
+	AcknowledgmentStatus:False
+	TimeStamp:2017-10-31T05:46:11-07:00
+	LastUpdatedAt:2017-10-31T05:46:11-07:00
+	FailureSource:10.89.204.202
+	Description:Loss of Signal on the Data Interface
+	Severity:MAJOR
+
+
+	AlarmID: 625226762
+	AcknowledgmentStatus:False
+	TimeStamp:2017-10-31T05:46:11-07:00
+	LastUpdatedAt:2017-10-31T05:46:11-07:00
+	FailureSource:10.89.204.202
+	Description:Local Fault
+	Severity:MAJOR
+
+
+	AlarmID: 625226758
+	AcknowledgmentStatus:False
+	TimeStamp:2017-10-31T05:46:11-07:00
+	LastUpdatedAt:2017-10-31T05:46:11-07:00
+	FailureSource:10.89.204.202
+	Description:Loss of Signal on the Data Interface
+	Severity:MAJOR
+
+
+	AlarmID: 488715614
+	AcknowledgmentStatus:False
+	TimeStamp:2017-10-20T12:26:34-07:00
+	LastUpdatedAt:2017-10-20T12:26:34-07:00
+	FailureSource:10.89.204.202
+	Description:Loss of Signal on the Data Interface
+	Severity:MAJOR
+
+
+	AlarmID: 625226761
+	AcknowledgmentStatus:False
+	TimeStamp:2017-10-31T05:46:11-07:00
+	LastUpdatedAt:2017-10-31T05:46:11-07:00
+	FailureSource:10.89.204.202
+	Description:Loss of Signal on the Data Interface
+	Severity:MAJOR
+
+
+	AlarmID: 625226760
+	AcknowledgmentStatus:False
+	TimeStamp:2017-10-31T05:46:11-07:00
+	LastUpdatedAt:2017-10-31T05:46:11-07:00
+	FailureSource:10.89.204.202
+	Description:Loss of Signal on the Data Interface
+	Severity:MAJOR
+
+
+	AlarmID: 625226756
+	AcknowledgmentStatus:False
+	TimeStamp:2017-10-31T05:46:11-07:00
+	LastUpdatedAt:2017-10-31T05:46:11-07:00
+	FailureSource:10.89.204.202
+	Description:Loss of Signal on the Data Interface
+	Severity:MAJOR
+
+
+	AlarmID: 625226757
+	AcknowledgmentStatus:False
+	TimeStamp:2017-10-31T05:46:11-07:00
+	LastUpdatedAt:2017-10-31T05:46:11-07:00
+	FailureSource:10.89.204.202
+	Description:Loss of Signal - Payload
+	Severity:CRITICAL
+
+
+	AlarmID: 625226754
+	AcknowledgmentStatus:False
+	TimeStamp:2017-10-31T05:46:11-07:00
+	LastUpdatedAt:2017-10-31T05:46:11-07:00
+	FailureSource:10.89.204.202
+	Description:Mismatch Of Equipment And Attributes
+	Severity:CRITICAL
+
+
+	AlarmID: 625226755
+	AcknowledgmentStatus:False
+	TimeStamp:2017-10-31T05:46:11-07:00
+	LastUpdatedAt:2017-10-31T05:46:11-07:00
+	FailureSource:10.89.204.202
+	Description:Mismatch Of Equipment And Attributes
+	Severity:CRITICAL
+
+
+
+
+Device 172.23.193.144
+	AlarmID: 447005768
+	AcknowledgmentStatus:False
+	TimeStamp:2017-10-11T19:32:06.075-07:00
+	LastUpdatedAt:2017-10-26T18:47:06.509-07:00
+	FailureSource:172.23.193.144
+	Description:Device '172.23.193.144'. Authentication failed for request from '172.18.108.10'.
+	Severity:MINOR
+
+
+
+
+Device 10.89.204.104
+	AlarmID: 511079652
+	AcknowledgmentStatus:False
+	TimeStamp:2017-10-23T10:34:58.834-07:00
+	LastUpdatedAt:2017-11-06T22:36:34.170-08:00
+	FailureSource:10.89.204.104
+	Description:TL1 Session for address '10.89.204.104' has failed
+	Severity:CRITICAL
+
+
+	AlarmID: 511079657
+	AcknowledgmentStatus:False
+	TimeStamp:2017-10-23T10:39:40.803-07:00
+	LastUpdatedAt:2017-10-23T10:39:40.803-07:00
+	FailureSource:10.89.204.104
+	Description:Device 'NCS2006-Node104' is unreachable.
+	Severity:CRITICAL
+
+
+	AlarmID: 511079715
+	AcknowledgmentStatus:False
+	TimeStamp:2017-10-23T22:01:14.200-07:00
+	LastUpdatedAt:2017-11-03T22:01:15.940-07:00
+	FailureSource:10.89.204.104
+	Description:Collection Failure for '10.89.204.104'
+	Severity:CRITICAL
+
+
+
+
+Device 10.89.195.122
+	AlarmID: 447006302
+	AcknowledgmentStatus:False
+	TimeStamp:2017-10-18T12:19:25-07:00
+	LastUpdatedAt:2017-10-18T12:19:25-07:00
+	FailureSource:10.89.195.122
+	Description:Improper Removal
+	Severity:CRITICAL
+
+
+	AlarmID: 447006301
+	AcknowledgmentStatus:False
+	TimeStamp:2017-10-18T12:19:25-07:00
+	LastUpdatedAt:2017-10-18T12:19:25-07:00
+	FailureSource:10.89.195.122
+	Description:Improper Removal
+	Severity:CRITICAL
+
+
+	AlarmID: 447006300
+	AcknowledgmentStatus:False
+	TimeStamp:2017-10-18T12:19:25-07:00
+	LastUpdatedAt:2017-10-18T12:19:25-07:00
+	FailureSource:10.89.195.122
+	Description:Improper Removal
+	Severity:CRITICAL
+
+
+	AlarmID: 447006239
+	AcknowledgmentStatus:False
+	TimeStamp:2017-10-18T07:54:25-07:00
+	LastUpdatedAt:2017-10-18T07:54:25-07:00
+	FailureSource:10.89.195.122
+	Description:Improper Removal
+	Severity:CRITICAL
+
+
+	AlarmID: 447006297
+	AcknowledgmentStatus:False
+	TimeStamp:2017-10-18T12:19:25-07:00
+	LastUpdatedAt:2017-10-18T12:19:25-07:00
+	FailureSource:10.89.195.122
+	Description:Improper Removal
+	Severity:CRITICAL
+
+
+	AlarmID: 447006296
+	AcknowledgmentStatus:False
+	TimeStamp:2017-10-18T12:19:25-07:00
+	LastUpdatedAt:2017-10-18T12:19:25-07:00
+	FailureSource:10.89.195.122
+	Description:Improper Removal
+	Severity:CRITICAL
+
+
+	AlarmID: 447006298
+	AcknowledgmentStatus:False
+	TimeStamp:2017-10-18T12:19:25-07:00
+	LastUpdatedAt:2017-10-18T12:19:25-07:00
+	FailureSource:10.89.195.122
+	Description:Improper Removal
+	Severity:CRITICAL
+
+
+	AlarmID: 625226910
+	AcknowledgmentStatus:False
+	TimeStamp:2017-10-31T11:03:06-07:00
+	LastUpdatedAt:2017-10-31T11:03:06-07:00
+	FailureSource:10.89.195.122
+	Description:Loss of Signal - Payload
+	Severity:CRITICAL
+
+
+	AlarmID: 625226909
+	AcknowledgmentStatus:False
+	TimeStamp:2017-10-31T11:03:06-07:00
+	LastUpdatedAt:2017-10-31T11:03:06-07:00
+	FailureSource:10.89.195.122
+	Description:Loss of Signal - Payload
+	Severity:CRITICAL
+
+
+	AlarmID: 447006246
+	AcknowledgmentStatus:False
+	TimeStamp:2017-10-18T07:54:25-07:00
+	LastUpdatedAt:2017-10-18T07:54:25-07:00
+	FailureSource:10.89.195.122
+	Description:Improper Removal
+	Severity:CRITICAL
+
+
+	AlarmID: 447006244
+	AcknowledgmentStatus:False
+	TimeStamp:2017-10-18T07:54:25-07:00
+	LastUpdatedAt:2017-10-18T07:54:25-07:00
+	FailureSource:10.89.195.122
+	Description:Improper Removal
+	Severity:CRITICAL
+
+
+	AlarmID: 447006245
+	AcknowledgmentStatus:False
+	TimeStamp:2017-10-18T07:54:25-07:00
+	LastUpdatedAt:2017-10-18T07:54:25-07:00
+	FailureSource:10.89.195.122
+	Description:Improper Removal
+	Severity:CRITICAL
+
+
+	AlarmID: 447006242
+	AcknowledgmentStatus:False
+	TimeStamp:2017-10-18T07:54:25-07:00
+	LastUpdatedAt:2017-10-18T07:54:25-07:00
+	FailureSource:10.89.195.122
+	Description:Improper Removal
+	Severity:CRITICAL
+
+
+	AlarmID: 447006243
+	AcknowledgmentStatus:False
+	TimeStamp:2017-10-18T07:54:25-07:00
+	LastUpdatedAt:2017-10-18T07:54:25-07:00
+	FailureSource:10.89.195.122
+	Description:Improper Removal
+	Severity:CRITICAL
+
+
+	AlarmID: 447006240
+	AcknowledgmentStatus:False
+	TimeStamp:2017-10-18T07:54:25-07:00
+	LastUpdatedAt:2017-10-18T07:54:25-07:00
+	FailureSource:10.89.195.122
+	Description:Improper Removal
+	Severity:CRITICAL
+
+
+	AlarmID: 447006241
+	AcknowledgmentStatus:False
+	TimeStamp:2017-10-18T07:54:25-07:00
+	LastUpdatedAt:2017-10-18T07:54:25-07:00
+	FailureSource:10.89.195.122
+	Description:Improper Removal
+	Severity:CRITICAL
+
+
+
+
+Device 10.89.204.241
+	AlarmID: 625226781
+	AcknowledgmentStatus:False
+	TimeStamp:2017-10-31T06:30:14.449-07:00
+	LastUpdatedAt:2017-10-31T06:30:14.449-07:00
+	FailureSource:10.89.204.241
+	Description:Provisioning Mismatch
+	Severity:MINOR
+
+
+
+
+Device 10.89.204.240
+	AlarmID: 656226099
+	AcknowledgmentStatus:False
+	TimeStamp:2017-11-06T15:31:39.449-08:00
+	LastUpdatedAt:2017-11-06T15:31:39.449-08:00
+	FailureSource:10.89.204.240
+	Description:Raman Calibration Failed
+	Severity:MINOR
+
+
+
+
+Device 10.89.204.121
+	AlarmID: 656226055
+	AcknowledgmentStatus:False
+	TimeStamp:2017-11-06T13:38:58.810-08:00
+	LastUpdatedAt:2017-11-06T13:38:58.810-08:00
+	FailureSource:10.89.204.121
+	Description:Patchcords Verification Failure
+	Severity:MAJOR
+
+
+
+
+Device 10.89.204.31
+	AlarmID: 656226136
+	AcknowledgmentStatus:False
+	TimeStamp:2017-11-06T22:24:53.374-08:00
+	LastUpdatedAt:2017-11-06T22:24:53.374-08:00
+	FailureSource:10.89.204.31
+	Description:Collection Failure for '10.89.204.31'
+	Severity:CRITICAL
+
+
+
+
+Device 10.89.204.30
+	AlarmID: 656226135
+	AcknowledgmentStatus:False
+	TimeStamp:2017-11-06T22:24:14.572-08:00
+	LastUpdatedAt:2017-11-06T22:24:14.572-08:00
+	FailureSource:10.89.204.30
+	Description:Collection Failure for '10.89.204.30'
+	Severity:CRITICAL
+
+
+
+
+Device 10.89.204.32
+	AlarmID: 656226140
+	AcknowledgmentStatus:False
+	TimeStamp:2017-11-06T22:31:43.626-08:00
+	LastUpdatedAt:2017-11-06T22:31:43.626-08:00
+	FailureSource:10.89.204.32
+	Description:Collection Failure for '10.89.204.32'
+	Severity:CRITICAL
+
+
+
+
+Device 172.20.165.87
+	AlarmID: 488715890
+	AcknowledgmentStatus:False
+	TimeStamp:2017-10-20T16:37:55-07:00
+	LastUpdatedAt:2017-10-20T16:37:55-07:00
+	FailureSource:172.20.165.87
+	Description:Improper Removal
+	Severity:CRITICAL
+
+
+	AlarmID: 656226138
+	AcknowledgmentStatus:False
+	TimeStamp:2017-11-06T22:28:58-08:00
+	LastUpdatedAt:2017-11-06T22:28:58-08:00
+	FailureSource:172.20.165.87
+	Description:Facility Low Rx power
+	Severity:MINOR
+
+
+	AlarmID: 538036522
+	AcknowledgmentStatus:False
+	TimeStamp:2017-10-26T15:57:07-07:00
+	LastUpdatedAt:2017-10-26T15:57:07-07:00
+	FailureSource:172.20.165.87
+	Description:Local Fault
+	Severity:MAJOR
+
+
+	AlarmID: 447006523
+	AcknowledgmentStatus:False
+	TimeStamp:2017-10-19T14:20:12-07:00
+	LastUpdatedAt:2017-10-19T14:20:12-07:00
+	FailureSource:172.20.165.87
+	Description:Improper Removal
+	Severity:CRITICAL
+
+
+	AlarmID: 447006522
+	AcknowledgmentStatus:False
+	TimeStamp:2017-10-19T14:20:12-07:00
+	LastUpdatedAt:2017-10-19T14:20:12-07:00
+	FailureSource:172.20.165.87
+	Description:Improper Removal
+	Severity:CRITICAL
+
+
+	AlarmID: 447006521
+	AcknowledgmentStatus:False
+	TimeStamp:2017-10-19T14:20:12-07:00
+	LastUpdatedAt:2017-10-19T14:20:12-07:00
+	FailureSource:172.20.165.87
+	Description:Improper Removal
+	Severity:CRITICAL
+
+
+	AlarmID: 656226137
+	AcknowledgmentStatus:False
+	TimeStamp:2017-11-06T22:28:58-08:00
+	LastUpdatedAt:2017-11-06T22:28:58-08:00
+	FailureSource:172.20.165.87
+	Description:Facility Low Rx power
+	Severity:MINOR
+
+
+	AlarmID: 488715891
+	AcknowledgmentStatus:False
+	TimeStamp:2017-10-20T16:37:55-07:00
+	LastUpdatedAt:2017-10-20T16:37:55-07:00
+	FailureSource:172.20.165.87
+	Description:Improper Removal
+	Severity:CRITICAL
+
+
+	AlarmID: 447006526
+	AcknowledgmentStatus:False
+	TimeStamp:2017-10-19T14:20:12-07:00
+	LastUpdatedAt:2017-10-19T14:20:12-07:00
+	FailureSource:172.20.165.87
+	Description:One or more FPDs need upgrade OR not in CURRENT state
+	Severity:MAJOR
+
+
+	AlarmID: 447006525
+	AcknowledgmentStatus:False
+	TimeStamp:2017-10-19T14:20:12-07:00
+	LastUpdatedAt:2017-10-19T14:20:12-07:00
+	FailureSource:172.20.165.87
+	Description:Improper Removal
+	Severity:CRITICAL
+
+
+	AlarmID: 447006524
+	AcknowledgmentStatus:False
+	TimeStamp:2017-10-19T14:20:12-07:00
+	LastUpdatedAt:2017-10-19T14:20:12-07:00
+	FailureSource:172.20.165.87
+	Description:Improper Removal
+	Severity:CRITICAL
+
+
+	AlarmID: 447006023
+	AcknowledgmentStatus:False
+	TimeStamp:2017-10-14T14:25:47-07:00
+	LastUpdatedAt:2017-10-14T14:25:47-07:00
+	FailureSource:172.20.165.87
+	Description:Improper Removal
+	Severity:CRITICAL
+
+
+	AlarmID: 511079948
+	AcknowledgmentStatus:False
+	TimeStamp:2017-10-24T09:30:51-07:00
+	LastUpdatedAt:2017-10-24T09:30:51-07:00
+	FailureSource:172.20.165.87
+	Description:Improper Removal
+	Severity:CRITICAL
+
+
+	AlarmID: 656225570
+	AcknowledgmentStatus:False
+	TimeStamp:2017-11-05T21:04:54-08:00
+	LastUpdatedAt:2017-11-05T21:04:54-08:00
+	FailureSource:172.20.165.87
+	Description:Remote Fault
+	Severity:MAJOR
+
+
+	AlarmID: 447006024
+	AcknowledgmentStatus:False
+	TimeStamp:2017-10-14T14:25:47-07:00
+	LastUpdatedAt:2017-10-14T14:25:47-07:00
+	FailureSource:172.20.165.87
+	Description:Improper Removal
+	Severity:CRITICAL
+
+
+	AlarmID: 447006025
+	AcknowledgmentStatus:False
+	TimeStamp:2017-10-14T14:25:47-07:00
+	LastUpdatedAt:2017-10-14T14:25:47-07:00
+	FailureSource:172.20.165.87
+	Description:Loss of Signal on the Data Interface
+	Severity:MAJOR
+
+
+	AlarmID: 625227047
+	AcknowledgmentStatus:False
+	TimeStamp:2017-11-01T09:31:42-07:00
+	LastUpdatedAt:2017-11-01T09:31:42-07:00
+	FailureSource:172.20.165.87
+	Description:Loss of Signal - Payload
+	Severity:CRITICAL
+
+
+	AlarmID: 511079947
+	AcknowledgmentStatus:False
+	TimeStamp:2017-10-24T09:30:51-07:00
+	LastUpdatedAt:2017-10-24T09:30:51-07:00
+	FailureSource:172.20.165.87
+	Description:Improper Removal
+	Severity:CRITICAL
+
+
+	AlarmID: 511079946
+	AcknowledgmentStatus:False
+	TimeStamp:2017-10-24T09:30:51-07:00
+	LastUpdatedAt:2017-10-24T09:30:51-07:00
+	FailureSource:172.20.165.87
+	Description:Improper Removal
+	Severity:CRITICAL
+
+
+	AlarmID: 511079945
+	AcknowledgmentStatus:False
+	TimeStamp:2017-10-24T09:30:51-07:00
+	LastUpdatedAt:2017-10-24T09:30:51-07:00
+	FailureSource:172.20.165.87
+	Description:Improper Removal
+	Severity:CRITICAL
+
+
+
+
+Device 172.20.165.82
+	AlarmID: 141836257
+	AcknowledgmentStatus:True
+	TimeStamp:2017-09-19T13:19:08-07:00
+	Notes:{u'annotation': [{u'noteText': u'Alarm acknowledged ', u'creationTimestamp': u'2017-10-10T11:15:51.835-07:00', u'creatorId': u'cisco'}, {u'noteText': u'Alarm assigned', u'creationTimestamp': u'2017-10-10T11:12:53.555-07:00', u'creatorId': u'cisco'}, {u'noteText': u'Test annotation', u'creationTimestamp': u'2017-10-10T11:13:17.173-07:00', u'creatorId': u'cisco'}]}
+	LastUpdatedAt:2017-11-06T22:37:39-08:00
+	FailureSource:172.20.165.82
+	Description:One or more FPDs need upgrade OR not in CURRENT state
+	Severity:MAJOR
+
+
+	AlarmID: 625227046
+	AcknowledgmentStatus:False
+	TimeStamp:2017-11-01T09:31:39-07:00
+	LastUpdatedAt:2017-11-01T09:31:39-07:00
+	FailureSource:172.20.165.82
+	Description:Loss of Signal - Payload
+	Severity:CRITICAL
+
+
+	AlarmID: 511079943
+	AcknowledgmentStatus:False
+	TimeStamp:2017-10-24T09:30:49-07:00
+	LastUpdatedAt:2017-10-24T09:30:49-07:00
+	FailureSource:172.20.165.82
+	Description:Improper Removal
+	Severity:CRITICAL
+
+
+	AlarmID: 511079942
+	AcknowledgmentStatus:False
+	TimeStamp:2017-10-24T09:30:49-07:00
+	LastUpdatedAt:2017-10-24T09:30:49-07:00
+	FailureSource:172.20.165.82
+	Description:Improper Removal
+	Severity:CRITICAL
+
+
+	AlarmID: 511079941
+	AcknowledgmentStatus:False
+	TimeStamp:2017-10-24T09:30:49-07:00
+	LastUpdatedAt:2017-10-24T09:30:49-07:00
+	FailureSource:172.20.165.82
+	Description:Improper Removal
+	Severity:CRITICAL
+
+
+	AlarmID: 511079940
+	AcknowledgmentStatus:False
+	TimeStamp:2017-10-24T09:30:49-07:00
+	LastUpdatedAt:2017-10-24T09:30:49-07:00
+	FailureSource:172.20.165.82
+	Description:Improper Removal
+	Severity:CRITICAL
+
+
+	AlarmID: 511079944
+	AcknowledgmentStatus:False
+	TimeStamp:2017-10-24T09:30:49-07:00
+	LastUpdatedAt:2017-10-24T09:30:49-07:00
+	FailureSource:172.20.165.82
+	Description:Improper Removal
+	Severity:CRITICAL
+
+
+	AlarmID: 488715888
+	AcknowledgmentStatus:False
+	TimeStamp:2017-10-20T16:37:49-07:00
+	LastUpdatedAt:2017-10-20T16:37:49-07:00
+	FailureSource:172.20.165.82
+	Description:Improper Removal
+	Severity:CRITICAL
+
+
+	AlarmID: 488715889
+	AcknowledgmentStatus:False
+	TimeStamp:2017-10-20T16:37:49-07:00
+	LastUpdatedAt:2017-10-20T16:37:49-07:00
+	FailureSource:172.20.165.82
+	Description:Improper Removal
+	Severity:CRITICAL
+
+
+	AlarmID: 447006516
+	AcknowledgmentStatus:False
+	TimeStamp:2017-10-19T14:20:06-07:00
+	LastUpdatedAt:2017-10-19T14:20:06-07:00
+	FailureSource:172.20.165.82
+	Description:The Power Supply Output Is Disabled
+	Severity:MAJOR
+
+
+	AlarmID: 447006517
+	AcknowledgmentStatus:False
+	TimeStamp:2017-10-19T14:20:06-07:00
+	LastUpdatedAt:2017-10-19T14:20:06-07:00
+	FailureSource:172.20.165.82
+	Description:Improper Removal
+	Severity:CRITICAL
+
+
+	AlarmID: 447006515
+	AcknowledgmentStatus:False
+	TimeStamp:2017-10-19T14:20:06-07:00
+	LastUpdatedAt:2017-10-19T14:20:06-07:00
+	FailureSource:172.20.165.82
+	Description:Power Tray Level Redundancy Lost
+	Severity:MAJOR
+
+
+	AlarmID: 447006518
+	AcknowledgmentStatus:False
+	TimeStamp:2017-10-19T14:20:06-07:00
+	LastUpdatedAt:2017-10-19T14:20:06-07:00
+	FailureSource:172.20.165.82
+	Description:Improper Removal
+	Severity:CRITICAL
+
+
+	AlarmID: 447006519
+	AcknowledgmentStatus:False
+	TimeStamp:2017-10-19T14:20:06-07:00
+	LastUpdatedAt:2017-10-19T14:20:06-07:00
+	FailureSource:172.20.165.82
+	Description:Improper Removal
+	Severity:CRITICAL
+
+
+	AlarmID: 625227238
+	AcknowledgmentStatus:False
+	TimeStamp:2017-11-01T18:21:44-07:00
+	LastUpdatedAt:2017-11-01T18:21:44-07:00
+	FailureSource:172.20.165.82
+	Description:Loss of Signal - Payload
+	Severity:CRITICAL
+
+
+	AlarmID: 625227239
+	AcknowledgmentStatus:False
+	TimeStamp:2017-11-01T18:21:44-07:00
+	LastUpdatedAt:2017-11-01T18:21:44-07:00
+	FailureSource:172.20.165.82
+	Description:Remote Fault
+	Severity:MAJOR
+
+
+	AlarmID: 625227237
+	AcknowledgmentStatus:False
+	TimeStamp:2017-11-01T18:21:44-07:00
+	LastUpdatedAt:2017-11-01T18:21:44-07:00
+	FailureSource:172.20.165.82
+	Description:Loss of Signal - Payload
+	Severity:CRITICAL
+
+
+	AlarmID: 538036521
+	AcknowledgmentStatus:False
+	TimeStamp:2017-10-26T15:57:05-07:00
+	LastUpdatedAt:2017-10-26T15:57:05-07:00
+	FailureSource:172.20.165.82
+	Description:Local Fault
+	Severity:MAJOR
+
+
+	AlarmID: 538036520
+	AcknowledgmentStatus:False
+	TimeStamp:2017-10-26T15:57:05-07:00
+	LastUpdatedAt:2017-10-26T15:57:05-07:00
+	FailureSource:172.20.165.82
+	Description:Loss of Signal on the Data Interface
+	Severity:MAJOR
+
+
+	AlarmID: 447006520
+	AcknowledgmentStatus:False
+	TimeStamp:2017-10-19T14:20:06-07:00
+	LastUpdatedAt:2017-10-19T14:20:06-07:00
+	FailureSource:172.20.165.82
+	Description:Improper Removal
+	Severity:CRITICAL
+
+
+	AlarmID: 447006017
+	AcknowledgmentStatus:False
+	TimeStamp:2017-10-14T14:20:41-07:00
+	LastUpdatedAt:2017-10-14T14:20:41-07:00
+	FailureSource:172.20.165.82
+	Description:Improper Removal
+	Severity:CRITICAL
+
+
+	AlarmID: 447006016
+	AcknowledgmentStatus:False
+	TimeStamp:2017-10-14T14:20:41-07:00
+	LastUpdatedAt:2017-10-14T14:20:41-07:00
+	FailureSource:172.20.165.82
+	Description:Improper Removal
+	Severity:CRITICAL
 
 
 
