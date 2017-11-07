@@ -53,6 +53,8 @@ class EPNM_Alarm:
         email_message['subject'] = subject
         email_message['From'] = source_address
         email_message['To'] = destination_address
+        message_body = MIMEText("Attached is an alarm report.")
+        email_message.attach(message_body)
         with open(attachment_url) as file:
             attachment = MIMEBase('application', 'octet-stream')
             attachment.set_payload(file.read())
