@@ -31,8 +31,6 @@ class JSONResponse(HttpResponse):
 # ====================>>>>>>>> Templates <<<<<<<<====================
 @login_required(login_url = '/web/login/')
 def index(request, loc = '', dev = '', location = ''):
-    # print "INDEX"
-    # print loc
     creds = epnm_info().get_info()
     epnm_obj = EPNM(creds['host'], creds['user'], creds['password'])
     location_list = epnm_obj.get_locations()
@@ -40,12 +38,10 @@ def index(request, loc = '', dev = '', location = ''):
 
 @login_required(login_url = '/web/login/')
 def home(request):
-    # print "HOME"
     return render(request, 'web_app/home.html')
 
 @login_required(login_url = '/web/login/')
 def main(request):
-    # print "MAIN"
     creds = epnm_info().get_info()
     epnm_obj = EPNM(creds['host'], creds['user'], creds['password'])
     location_list = epnm_obj.get_locations()
@@ -54,29 +50,21 @@ def main(request):
 
 @login_required(login_url = '/web/login/')
 def location_landing(request, loc):
-    # print 'LOCATION LANDING'
-    # print loc
     creds = epnm_info().get_info()
     epnm_obj = EPNM(creds['host'], creds['user'], creds['password'])
     dev_list = epnm_obj.get_group_devs(loc)
-    # group_alarm_list = epnm_obj.get_group_alarms(loc)
     show = True
     if len(dev_list) == 0: 
         dev_list.append('No Devices With Alarms to Report')
         show = False
-
     return render(request, 'web_app/location_landing.html', {
         'arg_in':loc, 
         'dev_list':dev_list,
         'show':show
-
     })
-
 
 @login_required(login_url = '/web/login/')
 def device_landing(request, dev):
-    # print 'Device LANDING'
-    # print dev
     creds = epnm_info().get_info()
     epnm_obj = EPNM(creds['host'], creds['user'], creds['password'])
     alarm_info = epnm_obj.get_alarms(dev)
@@ -93,9 +81,6 @@ def device_landing(request, dev):
 
     base = os.path.dirname(os.path.abspath(__file__))
     output_file = base + "/out_file/alarm_report.csv"
-    print download_url
-
-    # epnm_obj.send_email("steveyee@cisco.com", "epnm84@gmail.com", "TEST", download_url)
 
     return render(request, 'web_app/device_landing.html', {
         'arg_in':dev, 
@@ -106,8 +91,6 @@ def device_landing(request, dev):
 
 @login_required(login_url = '/web/login/')
 def location_dump(request, location):
-    # print 'LOCATION Dump'
-    # print location
     creds = epnm_info().get_info()
     epnm_obj = EPNM(creds['host'], creds['user'], creds['password'])
     alarm_list = epnm_obj.get_group_alarms(location)
@@ -163,32 +146,30 @@ def auth_view(request):
         # Return an 'invalid login' error message.
 
 def send_group_email_view(request):
-    print "HERE"
     if request.GET.get('mybtn'):
         location = str(request.GET.get('mybtn'))
-        print "Location is " + location
         creds = epnm_info().get_info()
         epnm_obj = EPNM(creds['host'], creds['user'], creds['password'])
         if epnm_obj.get_group_alarms(location) != {}:
             print "found"
             base = os.path.dirname(os.path.abspath(__file__))
             download_url = base + '/static/web_app/public/out_file/alarm_report.csv'
-            epnm_obj.send_email("steveyee@cisco.com", "epnm84@gmail.com", "TEST", download_url)
+            subject = "EPNM Alarm Report for Devices in " + location
+            epnm_obj.send_email("steveyee@cisco.com", "epnm84@gmail.com", subject, download_url)
         redirect_url = "/web/alarms/" + location
         return redirect(redirect_url)
 
 def send_device_email_view(request):
-    print "HERE"
     if request.GET.get('mybtn'):
         device = str(request.GET.get('mybtn'))
         print "Device is " + device
         creds = epnm_info().get_info()
         epnm_obj = EPNM(creds['host'], creds['user'], creds['password'])
         if epnm_obj.get_alarms(device) != {}:
-            print "found"
             base = os.path.dirname(os.path.abspath(__file__))
             download_url = base + '/static/web_app/public/out_file/alarm_report.csv'
-            epnm_obj.send_email("steveyee@cisco.com", "epnm84@gmail.com", "TEST", download_url)
+            subject = "EPNM Alarm Report for Device " + device
+            epnm_obj.send_email("steveyee@cisco.com", "epnm84@gmail.com", subject, download_url)
         redirect_url = "/web/device/" + device
         return redirect(redirect_url)
 
@@ -199,10 +180,7 @@ def group_writer(alarm_list):
     with open(output_file, 'wb') as alarm_report:
         thisWriter = csv.writer(alarm_report)
         thisWriter.writerow(['Failure Source', 'Key', 'Acknowledgment Status', 'Time Stamp Created', 'Notes', 'Last Updated At', 'Description', 'Severity', ])
-
         for device_ip in alarm_list:
-            print "HERE"
-            print device_ip
             for alarm in alarm_list[device_ip]:
                 device_string = []
                 device_string.append(device_ip)
@@ -233,7 +211,6 @@ def device_writer(dev, alarm_info):
 def out_writer(out_dump):
     base = os.path.dirname(os.path.abspath(__file__))
     output_file = base + '/static/web_app/public/out_file/alarm_report.txt'
-    # print output_file
     f = open(output_file, 'w')
     for line in out_dump:
         f.write(line + '\n')
