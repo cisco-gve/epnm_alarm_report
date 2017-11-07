@@ -24,6 +24,7 @@ urlpatterns = [
 
     url(r'^$', views.index),
     url(r'^auth/$', views.auth_view),
+    url(r'^email/$', views.send_email_view),
     url(r'^login/$', views.login_view, name='login'),
     url(r'^location/(?P<loc>.*)/$', views.index, name='location'),
     url(r'^device/(?P<dev>.*)/$', views.index, name='device'),

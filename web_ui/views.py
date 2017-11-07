@@ -125,11 +125,27 @@ def location_dump(request, location):
 
     base = os.path.dirname(os.path.abspath(__file__))
     output_file = base + '/out_files/alarm_report.txt'
+    alarm_breakdown={}
 
+    for item in alarm_list:
+        for k in alarm_list[item]:
+            for v in alarm_list[item][k]:
+                if v=='Severity':
+                    sev = alarm_list[item][k][v]
+                    if sev not in alarm_breakdown:
+                        alarm_breakdown[sev]=1
+                    else:
+                        alarm_breakdown[sev]+=1
 
     return render(request, 'web_app/location_dump.html', {
         'arg_in':location,
-        'alarm_list':alarm_list})
+        'alarm_list':alarm_list,
+        'alarm_breakdown':alarm_breakdown})
+
+
+    # return render(request, 'web_app/location_dump.html', {
+    #     'arg_in':location,
+    #     'alarm_list':alarm_list})
 
 
 def login_view(request):
@@ -146,6 +162,37 @@ def auth_view(request):
     else:
         return render(request, 'web_app/login.html', {'error_msg':'Invalid Login'})
         # Return an 'invalid login' error message.
+
+def send_email_view(request):
+    print "HERE"
+    if request.GET.get('mybtn'):
+        location = str(request.GET.get('mybtn'))
+        print "Location is " + location
+        creds = epnm_info().get_info()
+        epnm_obj = EPNM(creds['host'], creds['user'], creds['password'])
+        if epnm_obj.get_group_alarms(location) != {}:
+            print "found"
+            base = os.path.dirname(os.path.abspath(__file__))
+            download_url = base + '/static/web_app/public/out_file/alarm_report.txt'
+            epnm_obj.send_email("steveyee@cisco.com", "epnm84@gmail.com", "TEST", download_url)
+        redirect_url = "/web/alarms/" + location
+        return redirect(redirect_url)
+
+
+# def email_view(request):
+#     epnm_obj = EPNM(creds['host'], creds['user'], creds['password'])
+#     location = request.POST['location']
+#     if epnm_obj.get_group_alarms(location) != {}:
+#         base = os.path.dirname(os.path.abspath(__file__))
+#         download_url = base + '/static/web_app/public/out_file/alarm_report.txt'
+#         epnm_obj.send_email("steveyee@cisco.com", "epnm84@gmail.com", "TEST", download_url)
+
+#     if user is not None:
+#         login(request, user)
+#         return redirect('/web/')
+#         # Redirect to a success page.
+#     else:
+#         return render(request, 'web_app/login.html', {'error_msg':'Invalid Login'})
         
 def out_writer(out_dump):
     base = os.path.dirname(os.path.abspath(__file__))
