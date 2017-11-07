@@ -123,7 +123,14 @@ class EPNM_Alarm:
             info={}
             info['Severity'] = item['alarmsDTO']['severity']
             info['Description'] = item['alarmsDTO']['message']
-            info['TimeStamp'] = item['alarmsDTO']['lastUpdatedAt']
+            info['TimeStamp'] = item['alarmsDTO']['timeStamp']
+            info['FailureSource'] = item['alarmsDTO']['source']
+            info['LastUpdatedAt'] = item['alarmsDTO']['lastUpdatedAt']
+            info['AcknowledgmentStatus'] = item['alarmsDTO']['acknowledgementStatus']
+            if 'annotations' in item['alarmsDTO']:
+                info['Notes'] = item['alarmsDTO']['annotations']
+            else:
+                info['Notes'] = "No Notes"
             r_dict[item['alarmsDTO']['@id']] = info
         #     try:
         #         print r_dict['447006516']

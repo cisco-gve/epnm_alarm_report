@@ -55,8 +55,8 @@
 <div class="container">
     <div class="section">
         <div class="panel panel--loose panel--bordered">
-            <button class="button downloadbtn"> <a href="/static/web_app/public/out_file/alarm_report.txt" download>Download Alarm Report</a></button>
-            <form method="get" action="/web/email/">
+            <button class="button downloadbtn"> <a href="/static/web_app/public/out_file/alarm_report.csv" download>Download Alarm Report</a></button>
+            <form method="get" action="/web/groupemail/">
                 {% csrf_token %}
                 <button type="submit" value="{{arg_in}}" class="button downloadbtn" name="mybtn">Send Report as an Email</button>
                 <!-- <input type="submit" value="{{ arg_in }}" name="mybtn"> -->
@@ -67,6 +67,7 @@
                 </div>
             </div>
             <div>
+                <h6><p>Total Alarms: {{ total_alarms }}</p></h6>
                 <h6><p>Alarm Severity Breakdown:</p></h6>
                     {% for k, v in alarm_breakdown.items %}
                         <h6><p style="text-indent: 50px">{{k}} : {{v}}</p></h6>

@@ -55,7 +55,12 @@
 <div class="container">
     <div class="section">
         <div class="panel panel--loose panel--bordered">
-            <button class="button downloadbtn"> <a href="/static/web_app/public/out_file/alarm_report.txt" download>Download Alarm Report</a></button>
+            <button class="button downloadbtn"> <a href="/static/web_app/public/out_file/alarm_report.csv" download>Download Alarm Report</a></button>
+            <form method="get" action="/web/deviceemail/">
+                {% csrf_token %}
+                <button type="submit" value="{{arg_in}}" class="button downloadbtn" name="mybtn">Send Report as an Email</button>
+                <!-- <input type="submit" value="{{ arg_in }}" name="mybtn"> -->
+            </form>
             <div class="row">
                 <div class="col-md-8 text-large">
                     <h1 class="text-huge text-blue base-margin-bottom">{{ arg_in }} Alarms</h1>
@@ -66,8 +71,12 @@
            <div style="padding-top: 10px">
                     {%for k, v in alarm_info.items%}
                         <p>{{ k }}: Severity is {{ v.Severity }}</p>
+                        <p>Time Created: {{v.TimeStamp}}</p>
+                        <p>Failure Source: {{v.FailureSource}}</p>
                         <p>Last Reported: {{v.TimeStamp}}</p>
+                        <p>Acknowledgment Status: {{v.AcknowledgmentStatus}}</p>
                         <p>Description: {{v.Description}}</p>
+                        <p>Notes: {{v.Notes}}</p>
                         <br>
                     {% endfor %}
             </div>
