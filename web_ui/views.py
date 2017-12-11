@@ -29,6 +29,7 @@ class JSONResponse(HttpResponse):
 
 
 # ====================>>>>>>>> Templates <<<<<<<<====================
+# Display list of different locations for the site
 @login_required(login_url = '/web/login/')
 def index(request, loc = '', dev = '', location = ''):
     creds = epnm_info().get_info()
@@ -37,13 +38,13 @@ def index(request, loc = '', dev = '', location = ''):
     return render(request, 'web_app/index.html', {'list':location_list})
 
 
-
+# Redirect to index page
 @login_required(login_url = '/web/login/')
 def home(request):
     return render(request, 'web_app/home.html')
 
 
-
+# Display list of different locations for the site
 @login_required(login_url = '/web/login/')
 def main(request):
     creds = epnm_info().get_info()
@@ -52,7 +53,7 @@ def main(request):
     return render(request, 'web_app/main.html', {'list':location_list})
 
 
-
+# Display list of devices by IP address associated with a location
 @login_required(login_url = '/web/login/')
 def location_landing(request, loc):
     creds = epnm_info().get_info()
@@ -69,23 +70,13 @@ def location_landing(request, loc):
     })
 
 
-
+# Display list of alarms associated with a specific device
 @login_required(login_url = '/web/login/')
 def device_landing(request, dev):
     creds = epnm_info().get_info()
     epnm_obj = EPNM(creds['host'], creds['user'], creds['password'])
     alarm_info = epnm_obj.get_alarms(dev)
-
-    d_string = []
-    d_string.append('+++++ ' + dev + ' Alarm Summary +++++')
-    for k in alarm_info:
-        d_string.append('\t' + str(k) + ': Severity is ' + alarm_info[k]['Severity'] + '\n')
-        d_string.append('\tLast Reported: ' + alarm_info[k]['TimeStamp'])
-        d_string.append('\tDescription: ' + alarm_info[k]['Description'])
-        d_string.append('\n')
-
     download_url = device_writer(dev, alarm_info)
-
     base = os.path.dirname(os.path.abspath(__file__))
     output_file = base + "/out_file/alarm_report.csv"
 
@@ -96,25 +87,13 @@ def device_landing(request, dev):
     })
 
 
-
+# Display list of all devices associated with a location and all alarms associated with each device
 @login_required(login_url = '/web/login/')
 def location_dump(request, location):
     creds = epnm_info().get_info()
     epnm_obj = EPNM(creds['host'], creds['user'], creds['password'])
     alarm_list = epnm_obj.get_group_alarms(location)
-
-    d_string = []
-    d_string.append('+++++ ' + location + ' Alarm Summary +++++')
-    for device in alarm_list:
-        d_string.append('Device ' + device)
-        for alarm in alarm_list[device]:
-            d_string.append('\tAlarmID: ' + alarm)
-            for key in alarm_list[device][alarm]:
-                d_string.append('\t' + key + ':' + str(alarm_list[device][alarm][key])) 
-            d_string.append('\n')
-        d_string.append('\n')
     group_writer(alarm_list)
-
     base = os.path.dirname(os.path.abspath(__file__))
     output_file = base + '/out_files/alarm_report.csv'
 
@@ -138,12 +117,12 @@ def location_dump(request, location):
         'total_alarms':total_alarms})
 
 
-
+# Display login page
 def login_view(request):
     return render(request, 'web_app/login.html')
 
 
-
+# Authenticate entered user credentials
 def auth_view(request):
     username = request.POST['username']
     password = request.POST['password']
@@ -157,7 +136,7 @@ def auth_view(request):
         # Return an 'invalid login' error message.
 
 
-
+# Send email containing alarm information for a location
 def send_group_email_view(request):
     if request.GET.get('mybtn'):
         location = str(request.GET.get('mybtn'))
@@ -173,7 +152,7 @@ def send_group_email_view(request):
         return redirect(redirect_url)
 
 
-
+# Send email containing alarm information for a specific device
 def send_device_email_view(request):
     if request.GET.get('mybtn'):
         device = str(request.GET.get('mybtn'))
@@ -189,7 +168,7 @@ def send_device_email_view(request):
         return redirect(redirect_url)
 
 
-
+# Create .csv file containing alarm information for a location
 def group_writer(alarm_list):
     base = os.path.dirname(os.path.abspath(__file__))
     output_file = base + "/static/web_app/public/out_file/alarm_report.csv"
@@ -209,7 +188,7 @@ def group_writer(alarm_list):
     return output_file
 
 
-
+# Create .csv file containing alarm information for a specific device
 def device_writer(dev, alarm_info):
     base = os.path.dirname(os.path.abspath(__file__))
     output_file = base + "/static/web_app/public/out_file/alarm_report.csv"
@@ -226,18 +205,6 @@ def device_writer(dev, alarm_info):
                     device_string.append(alarm_info[device_id][attribute])
             thisWriter.writerow(device_string)
     return output_file
-
-
-
-def out_writer(out_dump):
-    base = os.path.dirname(os.path.abspath(__file__))
-    output_file = base + '/static/web_app/public/out_file/alarm_report.txt'
-    f = open(output_file, 'w')
-    for line in out_dump:
-        f.write(line + '\n')
-    f.close()
-    return output_file
-
 
 
 # ====================>>>>>>>> APIs <<<<<<<<====================
