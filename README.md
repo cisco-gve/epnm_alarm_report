@@ -1,6 +1,6 @@
 **EPNM Alarms Application**
 
-This application uses the Evolved Programmable Network Manager (EPNM) Rest API to query unresolved alarm information within the network. These alarm queries can be grouped by location defined groups, or can be specific to an individual device. The application will present the user with an alarm report in the browser, and the user can download the report to a .csv for future review.
+This web application uses the Evolved Programmable Network Manager (EPNM) Rest API to query unresolved alarm information within the network. These alarm queries can be grouped by location defined groups (e.g. San Jose or US - South), or can be specific to an individual device. The application will present the user with an alarm report in the browser, and the user can download the report to a .csv or receive it via email.
 
 The HTML user interface works better in Chrome and Firefox.
 
@@ -38,3 +38,6 @@ Log in with username: admin and password: cisco123
 **Known Issues**
 
 The EPNM Rest API can be slow. It sometimes helps to VPN into RTP before running the application.
+
+**Good to Know**
+The source and destination email addresses can be changed in /web_ui/views.py. Changes should be made to the functions send_group_email_view() and send_device_email_view(). The code currently sends from a gmail account. If you wish to change email platforms, send_email() in /web_ui/controllers/rest_calls.py may also need to be modified.
