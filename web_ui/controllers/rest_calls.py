@@ -16,11 +16,13 @@ class EPNM_Alarm:
 
     requests.packages.urllib3.disable_warnings()
 
+    # Set default values for authorization and host site location
     def __init__(self,host, user, pwd, verify=False):
         self.authorization = "Basic " + base64.b64encode(user + ":" + pwd)
         self.host = host
 
 
+    # Create default headers needed for EPNM Rest API 
     def get_headers(self, auth, content_type = "application", cache_control = "no-cache"):
         headers={
             'content-type': content_type,
@@ -41,6 +43,7 @@ class EPNM_Alarm:
         url = "https://"+host+"/webacs/api/v1/data/"+ext+".json?"+filters
         return self.get_response(url, headers, requestType = "GET", verify = False)
 
+
     # Formulate GET request for location groups and send it by calling get_response()
     def make_group_get_req(self, auth, host, ext, filters = ""):
         headers = self.get_headers(auth)
@@ -54,6 +57,7 @@ class EPNM_Alarm:
         for item in response:
             id_list.append(str(item['$']))
         return id_list
+
 
     # Send email
     def send_email(self, destination_address, source_address, subject, attachment_url):
@@ -103,22 +107,11 @@ class EPNM_Alarm:
         return id_list
 
 
-    def get_groupings(self):
-        group_list = []
-        extension = 'deviceGroups'
-        filters = '.full=true'
-        response = self.make_get_req(self.authorization, self.host, extension)['mgmtResponse']['grpDTO']
-        for item in response:
-            group_list.append(item['groupName'])
-        return group_list
-
-
     # Retrieve information on all alarms attached to a specific device identified by IP address
     def get_alarms(self, dev):
         extension = 'Alarms'
         filters = '.full=true'
         no_cleared_filters = ".full=true&source=\""+dev+"\"&severity=ne(\"CLEARED\")"
-        #***-->group filtering--> .group="GROUP"
         response = self.make_get_req(self.authorization, self.host, extension, no_cleared_filters)['queryResponse']['entity']
         r_dict={}
         for item in response:
@@ -137,14 +130,7 @@ class EPNM_Alarm:
         return r_dict
 
 
-    # 
-    def get_alarm_summary(self):
-        extension = 'alarmSummary'
-        response = self.make_group_get_req(auth, host, extension)
-        print json.dumps(response, indent=2)
-
-
-
+    # Return list of locations defined for the site
     def get_locations(self):
         site_list = []
         extension = 'sites'
