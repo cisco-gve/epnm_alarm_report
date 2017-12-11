@@ -1,6 +1,6 @@
 **EPNM Alarms Application**
 
-This application uses the Evolved Programmable Network Manager (EPNM) Rest API to query unresolved alarm information within the network. These alarm queries can be grouped by location defined groups, or can be specific to an individual device. The application will present the user with an alarm report in the browser, and the user can download the report to a .txt for future review.
+This application uses the Evolved Programmable Network Manager (EPNM) Rest API to query unresolved alarm information within the network. These alarm queries can be grouped by location defined groups, or can be specific to an individual device. The application will present the user with an alarm report in the browser, and the user can download the report to a .csv for future review.
 
 The HTML user interface works better in Chrome and Firefox.
 
@@ -14,8 +14,6 @@ Contacts:
 
 
 **Source Installation**
-
-Usually will be something like below:
 
 As this is a Django application you will need to either integrate the application in your production environment or you can get it operational in a virtual environment on your computer/server. In the distribution is a requirements.txt file that you can use to get the package requirements that are needed. The requirements file is located in the root directory of the distribution.
 
