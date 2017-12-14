@@ -175,7 +175,7 @@ def group_writer(alarm_list):
 
     with open(output_file, 'wb') as alarm_report:
         thisWriter = csv.writer(alarm_report)
-        thisWriter.writerow(['Failure Source', 'Key', 'Acknowledgment Status', 'Time Stamp Created', 'Notes', 'Last Updated At', 'Description', 'Severity', ])
+        thisWriter.writerow(['Failure Source', 'Key', 'Severity', 'Time Stamp Created', 'Notes', 'Last Updated At', 'Acknowledgment Status', 'Condition', 'Description'])
         for device_ip in alarm_list:
             for alarm in alarm_list[device_ip]:
                 device_string = []
@@ -195,7 +195,7 @@ def device_writer(dev, alarm_info):
 
     with open(output_file, 'wb') as alarm_report:
         thisWriter = csv.writer(alarm_report)
-        thisWriter.writerow(['Failure Source', 'Key', 'Acknowledgment Status', 'Time Stamp Created', 'Notes', 'Last Updated At', 'Description', 'Severity'])
+        thisWriter.writerow(['Failure Source', 'Key', 'Severity', 'Time Stamp Created', 'Notes', 'Last Updated At', 'Acknowledgment Status', 'Condition', 'Description'])
         for device_id in alarm_info:
             device_string = []
             device_string.append(alarm_info[device_id]['FailureSource'])

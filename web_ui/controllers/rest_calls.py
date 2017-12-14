@@ -117,6 +117,7 @@ class EPNM_Alarm:
         for item in response:
             info={}
             info['Severity'] = item['alarmsDTO']['severity']
+            info['Condition'] = item['alarmsDTO']['condition']['value']
             info['Description'] = item['alarmsDTO']['message']
             info['TimeStamp'] = item['alarmsDTO']['timeStamp']
             info['FailureSource'] = item['alarmsDTO']['source']
