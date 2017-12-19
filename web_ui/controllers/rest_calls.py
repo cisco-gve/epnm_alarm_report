@@ -78,7 +78,7 @@ class EPNM_Alarm:
         server = smtplib.SMTP('smtp.gmail.com', 587)
         server.ehlo()
         server.starttls()
-        server.login(source_address, opensesame.password)
+        server.login(source_address, opensesame.email_password)
         server.sendmail(source_address, destination_address, email_message.as_string())
         server.quit()
 

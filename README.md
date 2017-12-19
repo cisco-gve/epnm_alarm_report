@@ -36,11 +36,11 @@ This will run the web server and content can be accessed by navigating to 127.0.
 Log in with username: admin and password: cisco123
 
 **Need to Know**
-You must edit /web_ui/opensesame.py. This file must have the password for the source email account.
+You must edit /web_ui/opensesame.py. This file must have the password for the source email account as well as the username and password for the EPNM API account.
 
 **Good to Know**
 The source and destination email addresses can be changed in /web_ui/views.py. Changes should be made to the functions send_group_email_view() and send_device_email_view(). The code currently sends from a gmail account. If you wish to change email platforms, send_email() in /web_ui/controllers/rest_calls.py may also need to be modified.
 
 **Known Issues**
 
-The EPNM Rest API can be slow. It sometimes helps to VPN into RTP before running the application.
+The EPNM Rest API can take some time if you have a big network. It sometimes helps to VPN into RTP before running the application.
