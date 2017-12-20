@@ -43,4 +43,4 @@ The source and destination email addresses can be changed in /web_ui/views.py. C
 
 **Known Issues**
 
-The EPNM Rest API can take some time if you have a big network. It sometimes helps to VPN into RTP before running the application.
+The EPNM Rest API can take some time if you have a big network. It sometimes helps to VPN into a location closer to EPNM server before running the application.
