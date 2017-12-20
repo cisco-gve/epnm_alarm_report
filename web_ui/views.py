@@ -10,6 +10,7 @@ import csv
 
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.decorators import login_required
+import opensesame
 
 from models import epnm_info as epnm_info
 from controllers.rest_calls import EPNM_Alarm as EPNM
@@ -147,7 +148,7 @@ def send_group_email_view(request):
             base = os.path.dirname(os.path.abspath(__file__))
             download_url = base + '/static/web_app/public/out_file/alarm_report.csv'
             subject = "EPNM Alarm Report for Devices in " + location
-            epnm_obj.send_email("steveyee@cisco.com", "epnm84@gmail.com", subject, download_url)
+            epnm_obj.send_email("steveyee@cisco.com", opensesame.email_address, opensesame.email_password, subject, download_url)
         redirect_url = "/web/alarms/" + location
         return redirect(redirect_url)
 
@@ -163,7 +164,7 @@ def send_device_email_view(request):
             base = os.path.dirname(os.path.abspath(__file__))
             download_url = base + '/static/web_app/public/out_file/alarm_report.csv'
             subject = "EPNM Alarm Report for Device " + device
-            epnm_obj.send_email("steveyee@cisco.com", "epnm84@gmail.com", subject, download_url)
+            epnm_obj.send_email("steveyee@cisco.com", opensesame.email_address, opensesame.email_password, subject, download_url)
         redirect_url = "/web/device/" + device
         return redirect(redirect_url)
 

@@ -103,5 +103,4 @@ venv.bak/
 # mypy
 .mypy_cache/
 
-# Gmail Password
-/web_ui/opensesame.py
+# Email and API Account Info

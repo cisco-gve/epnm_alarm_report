@@ -5,7 +5,6 @@ __status__ = "Development"
 
 #import necessary libraries
 import base64, getpass, requests, json, sys, smtplib, csv, os
-from .. import opensesame
 from email.mime.multipart import MIMEMultipart
 from email.message import Message
 from email.mime.text import MIMEText
@@ -60,7 +59,7 @@ class EPNM_Alarm:
 
 
     # Send email
-    def send_email(self, destination_address, source_address, subject, attachment_url):
+    def send_email(self, destination_address, source_address, password, subject, attachment_url):
         email_message = MIMEMultipart()
         email_message['subject'] = subject
         email_message['From'] = source_address
@@ -78,7 +77,7 @@ class EPNM_Alarm:
         server = smtplib.SMTP('smtp.gmail.com', 587)
         server.ehlo()
         server.starttls()
-        server.login(source_address, opensesame.email_password)
+        server.login(source_address, password)
         server.sendmail(source_address, destination_address, email_message.as_string())
         server.quit()
 
