@@ -104,3 +104,4 @@ venv.bak/
 .mypy_cache/
 
 # Email and API Account Info
+/web_ui/opensesame.py
